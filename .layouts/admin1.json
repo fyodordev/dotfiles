@@ -1,0 +1,47 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "user_off",
+    "geometry": {
+       "height": 993,
+       "width": 1860,
+       "x": 30,
+       "y": 57
+    },
+    "name": "Personal - Microsoft OneNote Online",
+    "percent": 0.62,
+    "swallows": [
+       {
+       "class": "^Chromium$",
+       "instance": "^www\\.onenote\\.com__notebooks$"
+       // "title": "^Personal\\ \\-\\ Microsoft\\ OneNote\\ Online$",
+       // "window_role": "^pop\\-up$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "user_off",
+    "geometry": {
+       "height": 993,
+       "width": 1860,
+       "x": 30,
+       "y": 57
+    },
+    "name": "24:22 min - linux setup - Software Dev • Toggl",
+    "percent": 0.38,
+    "swallows": [
+       {
+       "class": "^Chromium$",
+       "instance": "^toggl\\.com__app_timer$"
+       // "title": "^24\\:22\\ min\\ \\-\\ linux\\ setup\\ \\-\\ Software\\ Dev\\ \\•\\ Toggl$",
+       // "window_role": "^pop\\-up$"
+       }
+    ],
+    "type": "con"
+}
+
