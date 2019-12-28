@@ -267,7 +267,7 @@ exec --no-startup-id killall polybar; polybar top
 #exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/fyodor/startup-2.json'; kitty fish -c 'neofetch --disk_show --disk_subtitle; exec fish'"
     for_window [class="^Chromium$"] floating disable 
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/i3_layout_comms.json; workspace 2; append_layout /home/fyodor/.layouts/i3_layout_admin1.json; workspace 3; append_layout /home/fyodor/.layouts/i3_layout_admin2.json; workspace 4; append_layout /home/fyodor/.layouts/i3_layout_chromium.json; workspace 5; append_layout /home/fyodor/.layouts/i3_layout_floating-neofetch.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/comms.json; workspace 2; append_layout /home/fyodor/.layouts/admin1.json; workspace 3; append_layout /home/fyodor/.layouts/admin2.json; workspace 4; append_layout /home/fyodor/.layouts/chromium.json; workspace 5; append_layout /home/fyodor/.layouts/floating-neofetch.json'"
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout $HOME/testdir/i3_layouts_floating-neofetch.json'"
 exec --no-startup-id "telegram-desktop"
 exec --no-startup-id "chromium --app='https://web.whatsapp.com/'"
