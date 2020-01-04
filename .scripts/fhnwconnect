@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Connect to VPN
+openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch;

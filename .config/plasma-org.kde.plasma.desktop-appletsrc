@@ -45,4 +45,4 @@ Image=file:///usr/share/wallpapers/Next/contents/images/1920x1080.png
 
 [ScreenMapping]
 itemsOnDisabledScreens=
-screenMapping=desktop:/OneDrive,0,desktop:/README.md,0,desktop:/Downloads,0,desktop:/Public,0,desktop:/Music,0,desktop:/Templates,0,desktop:/Videos,0,desktop:/Development,0,desktop:/testdir,0,desktop:/Documents,0,desktop:/Pictures,0
+screenMapping=desktop:/OneDrive,0,desktop:/Documents,0,desktop:/README.md,0,desktop:/Public,0,desktop:/Development,0,desktop:/snap,0,desktop:/Downloads,0,desktop:/Music,0,desktop:/Templates,0,desktop:/Pictures,0,desktop:/itsm.7z,0,desktop:/Videos,0

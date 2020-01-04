@@ -1,0 +1,2 @@
+#!/bin/bash
+plasmawindowed org.kde.plasma.networkmanagement

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Mount filesystem
+sudo mount -t cifs -o username=fedorpavlovitch.perejoguine@students.fhnw.ch,mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad

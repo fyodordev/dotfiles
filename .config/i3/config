@@ -36,6 +36,8 @@ font pango:monospace 8
 #bindsym $mod+d exec --no-startup-id krunner
 bindcode 133 --release exec --no-startup-id rofi -show run
 
+# CUSTOM ADDED keycombo to lock screen
+
 # start a terminal
 bindsym $mod+Return exec kitty
 
@@ -179,13 +181,13 @@ set $background  #000000
 set $transparent #00000000
 
 # >>> Remove title bar and set border <<<
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 smart_borders on
 
 # Gaps
-gaps inner 18
-gaps outer 12
-#smart_gaps on
+gaps inner 0
+gaps outer 0
+smart_gaps on
   
 # Border and window colors.
 # class                 border  backgr. text    indicator child_border
@@ -209,7 +211,7 @@ for_window [title="Desktop — Plasma"] kill; floating enable; #border none
 # Set your own wallpaper.
 exec --no-startup-id feh --bg-fill ~/Documents/wallpapers/t3_4rqbbm.jpg
 # Start compton (which is needed for blur, transition effects, etc.)
-exec --no-startup-id compton
+exec --no-startup-id killall compton; compton
 
 # >>> Window rules <<<
 
@@ -231,6 +233,7 @@ exec --no-startup-id compton
 
 # >>> Avoid tiling for non-Plasma stuff <<<
   
+    for_window [class="plasmawindowed"] floating enable
     for_window [window_role="pop-up"] floating enable
     for_window [window_role="bubble"] floating enable
     for_window [window_role="task_dialog"] floating enable
@@ -267,7 +270,7 @@ exec --no-startup-id killall polybar; polybar top
 #exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/fyodor/startup-2.json'; kitty fish -c 'neofetch --disk_show --disk_subtitle; exec fish'"
     for_window [class="^Chromium$"] floating disable 
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/comms.json; workspace 2; append_layout /home/fyodor/.layouts/admin1.json; workspace 3; append_layout /home/fyodor/.layouts/admin2.json; workspace 4; append_layout /home/fyodor/.layouts/chromium.json; workspace 5; append_layout /home/fyodor/.layouts/floating-neofetch.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/comms.json; workspace 2; append_layout /home/fyodor/.layouts/admin1.json; workspace 3; append_layout /home/fyodor/.layouts/admin2.json; workspace 4; append_layout /home/fyodor/.layouts/chromium.json; workspace 8; append_layout /home/fyodor/.layouts/floating-neofetch.json'"
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout $HOME/testdir/i3_layouts_floating-neofetch.json'"
 exec --no-startup-id "telegram-desktop"
 exec --no-startup-id "chromium --app='https://web.whatsapp.com/'"
@@ -277,5 +280,7 @@ exec --no-startup-id "chromium --app='https://calendar.google.com/calendar/b/0/r
 exec --no-startup-id "chromium --app='https://todoist.com/app'"
 exec --no-startup-id "chromium --app='https://toggl.com/app/timer'"
 exec --no-startup-id "kitty fish -c 'neofetch --disk_show --disk_subtitle; exec fish'"
+
+exec_always --no-startup-id flashfocus
 
 

@@ -41,7 +41,7 @@ fixed-center = false
 ; COLORS ;
 ;--------;
 
-background = #00000000
+background = #ff11232a
 background-alt = #555
 foreground = #dfdfdf
 foreground-alt = #555
