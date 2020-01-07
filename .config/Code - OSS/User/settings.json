@@ -1,5 +1,23 @@
 {
     "workbench.colorTheme": "Material Theme Ocean",
     "window.menuBarVisibility": "toggle",
-    "editor.fontFamily": "Hack"
+    "editor.fontFamily": "Hack",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": false,
+    "editor.lineSize": 24,
+    "editor.rulers": [
+	    100
+    ],
+    "vim.handleKeys": { 
+	"<C-j>": false,
+	"<C-w>": false,
+	"<C-f>": false
+    },
+    "[python]": { 
+	"editor.detectIndentation": false,
+	"editor.tabSize": 4,
+	"editor.rulers": [
+	    80
+	]
+    }
 }

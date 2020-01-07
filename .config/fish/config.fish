@@ -1,6 +1,6 @@
 #!/bin/fish
 
-source ~/.profile
+fenv source ~/.profile
 # Set the cursor shapes for the different vi modes.
 # Doesn't work for some reason.
 set fish_cursor_default     underscore      blink
