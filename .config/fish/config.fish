@@ -10,4 +10,5 @@ set fish_cursor_visual      underscore blink
 
 alias dfgit='/usr/bin/git --git-dir=$HOME/.cfg-git/ --work-tree=$HOME'
 alias vi='/usr/bin/nvim'
+alias cli='xclip -sel clip'
 
