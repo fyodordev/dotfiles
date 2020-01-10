@@ -9,7 +9,7 @@
        "x": 30,
        "y": 57
     },
-    "name": "Personal - Microsoft OneNote Online",
+    "name": "OneNote",
     "percent": 0.62,
     "swallows": [
        {
@@ -32,12 +32,12 @@
        "x": 30,
        "y": 57
     },
-    "name": "24:22 min - linux setup - Software Dev • Toggl",
+    "name": "Google Calendar",
     "percent": 0.38,
     "swallows": [
        {
        "class": "^Chromium$",
-       "instance": "^toggl\\.com__app_timer$"
+       "instance": "^calendar\\.google\\.com__calendar_b_0_r$"
        // "title": "^24\\:22\\ min\\ \\-\\ linux\\ setup\\ \\-\\ Software\\ Dev\\ \\•\\ Toggl$",
        // "window_role": "^pop\\-up$"
        }
