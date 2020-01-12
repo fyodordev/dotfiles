@@ -1,0 +1,3 @@
+#!/bin/bash
+SYNC_FOLDER=$HOME/OneDrive
+rclone sync onedrive-fyodor:/ $SYNC_FOLDER/ -P --delete-during;

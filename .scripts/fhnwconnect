@@ -1,4 +1,19 @@
 #!/bin/bash
 
 # Connect to VPN
-openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch;
+pw=$(sudo kdialog --password "Enter password for FHNW VPN: ")
+#"${pw} | openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch" &>/dev/null;
+
+#echo $pw
+echo $pw | sudo openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch --passwd-on-stdin &
+
+sleep 5;
+
+# Mount filesystem
+if grep -qs '/mnt/fhnw_ad ' /proc/mounts; then
+    echo "AD already mounted."
+else 
+    echo "AD not mounted.";
+    sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$pw,mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad
+fi
+#sudo mount -t cifs -o username=fedorpavlovitch.perejoguine@students.fhnw.ch,password=$pw,mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad;

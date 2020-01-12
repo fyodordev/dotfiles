@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Usage: conv-win-links WIN_LINK_FILE SYMLINK_FILE
+
 # Obsolete root of link including \
 LINKROOT=\\\\\\\\fsemu18.edu.ds.fhnw.ch\\\\e_18_data11\\\$\\\\
 REALROOT=/mnt/fhnw_ad/HT/
