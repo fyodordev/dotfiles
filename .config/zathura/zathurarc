@@ -2,3 +2,7 @@ set default-bg "#111111"
 set recolor-lightcolor "#222222"
 set recolor-darkcolor "#eeeeee"
 map <C-i> recolor
+set guioptions ""
+
+# This fixes links not being open in a browser.
+set sandbox none
