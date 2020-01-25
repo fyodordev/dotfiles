@@ -291,5 +291,6 @@ bindsym --release Print exec --no-startup-id screenshot_area
 bindsym --release Shift+Print exec --no-startup-id screenshot_area_hq
 bindsym --release $mod+Print exec --no-startup-id screenshot_full
 bindsym --release Shift+$mod+Print exec --no-startup-id screenshot_full_hq
+bindsym Mod1+G exec --no-startup-id capture-gif
 
 
