@@ -17,3 +17,7 @@ set shiftwidth=4    " number of spaces to use for autoindent
 set expandtab       " tabs are space
 set autoindent
 set copyindent      " copy indent from the previous line
+
+" Line numbers
+set number                     " Show current line number
+set relativenumber             " Show relative line numbers
