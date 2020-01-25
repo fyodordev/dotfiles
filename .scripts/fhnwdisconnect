@@ -1,3 +1,0 @@
-#!/bin/bash
-sudo pkill -f openconnect &
-sudo umount -l /mnt/fhnw_ad &
