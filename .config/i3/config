@@ -196,11 +196,11 @@ smart_gaps on
   
 # Border and window colors.
 # class                 border  backgr. text    indicator child_border
-client.focused          #67CB55 #A3AF9E #ffffff #D6E9CF   #67CB55
-client.focused_inactive #576953 #A3AF9E #ffffff #6A7466   #576953
-client.unfocused        #576953 #A3AF9E #888888 #6A7466   #576953
+client.focused          #67CB55 #67CB55 #ffffff #D6E9CF   #67CB55
+client.focused_inactive #67CB55 #67CB55 #ffffff #6A7466   #576953
+client.unfocused        #67CB55 #062C30 #ffffff #6A7466   #576953
 client.urgent           #AA6A7466 #A3AF9E #ffffff #900000   #900000
-client.placeholder      #AA6A7466 #A3AF9E #ffffff #000000   #404A3C
+client.placeholder      #AA6A7466 #062C30 #ffffff #000000   #404A3C
 
 
 # If using compton and nitrogen change below
