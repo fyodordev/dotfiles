@@ -8,6 +8,8 @@
     "editor.rulers": [
 	    100
     ],
+    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.lineSize": 22,
     "vim.handleKeys": { 
 	"<C-j>": false,
 	"<C-w>": false,
