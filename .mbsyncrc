@@ -1,0 +1,131 @@
+
+IMAPStore unnam3d82-remote
+Host imap.gmail.com
+Port  993
+User unnam3d82@gmail.com
+PassCmd "pass mutt-wizard-unnam3d82"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore unnam3d82-local
+Subfolders Verbatim
+Path ~/.local/share/mail/unnam3d82/
+Inbox ~/.local/share/mail/unnam3d82/INBOX
+Flatten .
+
+Channel unnam3d82
+Expunge Both
+Master :unnam3d82-remote:
+Slave :unnam3d82-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore live-mail-remote
+Host imap-mail.outlook.com
+Port  993
+User fjodor.perejoguine@live.de
+PassCmd "pass mutt-wizard-live-mail"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore live-mail-local
+Subfolders Verbatim
+Path ~/.local/share/mail/live-mail/
+Inbox ~/.local/share/mail/live-mail/INBOX
+Flatten .
+
+Channel live-mail
+Expunge Both
+Master :live-mail-remote:
+Slave :live-mail-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+IMAPStore fhnw-remote
+Host imap.fhnw.ch
+Port  993
+User fedorpavlovitch.perejoguine@students.fhnw.ch 
+PassCmd "pass mutt-wizard-fhnw"
+SSLType IMAPS
+AuthMechs PLAIN
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore fhnw-local
+Subfolders Verbatim
+Path ~/.local/share/mail/fhnw/
+Inbox ~/.local/share/mail/fhnw/INBOX
+Flatten .
+
+Channel fhnw 
+Expunge Both
+Master :fhnw-remote:
+Slave :fhnw-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+
+
+IMAPStore computerworks-remote
+Host mail.computerworks.ch
+Port  993
+User fperejoguine@computerworks.ch
+PassCmd "pass mutt-wizard-computerworks"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore computerworks-local
+Subfolders Verbatim
+Path ~/.local/share/mail/computerworks/
+Inbox ~/.local/share/mail/computerworks/INBOX
+Flatten .
+
+Channel computerworks
+Expunge Both
+Master :computerworks-remote:
+Slave :computerworks-local:
+Patterns * !"[Gmail]/All Mail" !"Public*"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+IMAPStore gmail-fyodordev-remote
+Host imap.gmail.com
+Port  993
+User fyodordev@gmail.com
+PassCmd "pass mutt-wizard-gmail-fyodordev"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore gmail-fyodordev-local
+Subfolders Verbatim
+Path ~/.local/share/mail/gmail-fyodordev/
+Inbox ~/.local/share/mail/gmail-fyodordev/INBOX
+Flatten .
+
+Channel gmail-fyodordev
+Expunge Both
+Master :gmail-fyodordev-remote:
+Slave :gmail-fyodordev-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
