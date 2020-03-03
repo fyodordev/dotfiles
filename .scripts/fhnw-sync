@@ -3,9 +3,10 @@
 # Usage: fhnw-sync [ diff ]
 # fhnw-sync diff: Show difference between the files
 
-SOURCE_PATH=$HOME"/OneDrive/Studium cloud"
+# Source path must include directories which in turn have a symlink 'ad' inside.
+SOURCE_PATH=$HOME"/Documents/Studium/ad-symlinks"
 TARGET_PATH=$HOME"/Documents/studium-module"
-EXCLUDE_PATTERN="*.ova"
+EXCLUDE_PATTERN="*.mp4"
 
 
 ARG=$1
@@ -36,7 +37,7 @@ sync_folder() {
 	#rsync -rtm --info=progress2 --delete
 }
 
-ls -d -1 "$SOURCE_PATH/"*/symlink |
+ls -d -1 "$SOURCE_PATH/"*/ad |
 while read -r a;
 	do sync_folder "$a";
 done

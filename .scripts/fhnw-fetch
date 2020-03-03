@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Connect to VPN
-pass mutt-wizard-fhnw | sudo openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch --passwd-on-stdin &
+pass Email/fedorpavlovitch.perejoguine@students.fhnw.ch | sudo openconnect https://vpn.fhnw.ch/ -u fedorpavlovitch.perejoguine@students.fhnw.ch --passwd-on-stdin &
 while [ "0" == `ip link show | grep tun0 | wc -l` ]
 do
     echo "VPN connection not detected";
@@ -15,7 +15,7 @@ if grep -qs '/mnt/fhnw_ad ' /proc/mounts; then
     fhnw-sync;
 else 
     echo "AD not mounted.";
-    sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$(pass mutt-wizard-fhnw),mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad && fhnw-sync;
+    sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$(pass Email/fedorpavlovitch.perejoguine@students.fhnw.ch),mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad && fhnw-sync;
 fi
 
 fhnw-disconnect;

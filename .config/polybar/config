@@ -20,12 +20,82 @@
 background = ${xrdb:color0:#222}
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #dfdfdf
-primary = #FFF
-secondary = #B2535B
-alert = #B2535B
+foreground = #F9F5ED
+foreground-alt = #F9F5ED
+primary = #FF9328
+secondary = #0d1926
+alert = #EF1C86
 
+[bar/top2]
+
+;monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
+fixed-center = false
+monitor = DP-4
+;separator =
+
+;--------;
+; COLORS ;
+;--------;
+
+background = #0011232a
+background-alt = #555
+foreground = #dfdfdf
+foreground-alt = #555
+#primary = #F9F5ED
+#secondary = #e60053
+#alert = #B2535B
+
+;background = ${colors.background}
+;foreground = ${colors.foreground}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 3
+padding-right = 3
+
+module-margin-left = 4
+module-margin-right = 4
+; Doesn't work for some reason.
+;margin-top = 100
+;margin-bottom = 100
+
+font-0 = DINPro:style=Bold:pixelsize=13;4
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free:style=Solid:pixelsize=12;4
+font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;4
+font-4 = Font Awesome 5 Brands:style=Regular:pixelsize=12;4
+
+;xwindow for window names
+;modules-left = i3 
+modules-center = i3
+;modules-right = eth filesystem date
+
+;tray-position = right
+;tray-padding = 2
+;tray-background = #0063ff
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -35,14 +105,15 @@ height = 27
 ;offset-y = 1%
 radius = 0
 fixed-center = false
+monitor = DP-1
 ;separator =
 
 ;--------;
 ; COLORS ;
 ;--------;
 
-background = #ff11232a
-background-alt = #555
+background = #0011232a
+background-alt = #00333555
 foreground = #dfdfdf
 foreground-alt = #555
 primary = #E1D4AE
@@ -63,18 +134,20 @@ padding-right = 3
 
 module-margin-left = 4
 module-margin-right = 4
-# Doesn't work for some reason.
+; Doesn't work for some reason.
 ;margin-top = 100
 ;margin-bottom = 100
 
-font-0 = fixed:pixelsize=11;1
+font-0 = DINPro:style=Bold:pixelsize=13;4
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Font Awesome 5 Free Solid:pixelsize=12;1
+font-2 = Font Awesome 5 Free:style=Solid:pixelsize=12;4
+font-3 = Font Awesome 5 Free:style=Regular:pixelsize=12;4
+font-4 = Font Awesome 5 Brands:style=Regular:pixelsize=12;4
 
 ;xwindow for window names
-modules-left = i3 
-;modules-center = backlight alsa
-modules-right = vpnstatus wlan eth filesystem battery1 date
+modules-left = date
+modules-center = i3
+modules-right = eth filesystem
 
 ;tray-position = right
 ;tray-padding = 2
@@ -101,6 +174,7 @@ interval = 5
 
 [module/xwindow]
 type = internal/xwindow
+ws-icon-0="
 label = %title:0:30:...%
 
 [module/xkeyboard]
@@ -156,33 +230,46 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
+strip-wsnumbers = true
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
+fuzzy-match=true
+
+;ws-icon-1 = chromium;
+
 ; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
+;label-focused-font = 2
+label-focused = %name%
+label-focused-foreground = ${colors.foreground}
+label-focused-background = #4F87C3
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+;label-unfocused-font = 2
+label-unfocused = %name%
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-background = #00000000
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
+;label-visible-font = 2
+label-visible = %name%
+label-visible-foreground = ${colors.foreground}
+label-visible-background = #4A535C
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
-label-urgent-background = ${colors.alert}
+label-urgent = %name%
+label-urgent-background = #00ffffff
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
@@ -307,16 +394,16 @@ format-disconnected =
 type = internal/date
 interval = 1
 
-date = "%a  %d %b"
-date-alt = "KW %V"
+date = "     %a  %d %b"
+date-alt = "     KW %V"
 
-time = "   %H:%M:%S"
-time-alt = "   %H:%M:%S"
+time = "%H:%M:%S"
+time-alt = "%H:%M:%S"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 
-label = %date% %time%
+label = %time% %date%
 
 
 [module/alsa]

@@ -9,6 +9,9 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# Start compton (which is needed for blur, transition effects, etc.)
+exec --no-startup-id "killall compton; compton -b"
+
 # Set to Windows key (on Lenovo Laptop)
 set $mod Mod4
 
@@ -34,12 +37,16 @@ font pango:monospace 8
 # CUSTOM ADDED Start runner of your choice:
 # Bind using keycode (because only $mod doesn work with bindcode)
 #bindsym $mod+d exec --no-startup-id krunner
-bindcode 133 --release exec --no-startup-id rofi -show run
+bindcode 133 --release exec --no-startup-id "rofi -show run -sidebar-mode -modi 'window,run'"
+bindsym $mod+d --release exec --no-startup-id "rofi -theme utilmenu -show 'power' -sidebar-mode -modi 'power:~/.config/rofi/menus/rofi-powerscript.sh,utility:~/.config/rofi/menus/rofi-utilityscript.sh,keyboard:~/.config/rofi/menus/rofi-keyboard.sh'"
 
 # CUSTOM ADDED keycombo to lock screen
 
 # start a terminal
 bindsym $mod+Return exec kitty
+
+# Create new workspace
+bindsym $mod+n exec new-i3-workspace
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -128,11 +135,19 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-bindsym Mod1+Shift+r exec --no-startup-id "killall compton; compton"
+# Restart compositor
+bindsym Mod1+Shift+r exec --no-startup-id "killall compton; compton -b"
 
 # Alt+Tab to cycle between active workspace
-bindsym Mod1+Shift+Tab                workspace prev
-bindsym Mod1+Tab          workspace next
+bindsym Mod1+Shift+Tab                workspace prev_on_output
+bindsym Mod1+Tab          workspace next_on_output
+
+# move focused workspace between monitors
+bindsym $mod+Ctrl+h move workspace to output right
+bindsym $mod+Ctrl+l move workspace to output left
+
+# Move to new workspace
+bindsym $mod+Shift+n exec moveto-new-i3-workspace
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -185,38 +200,48 @@ set $darkwhite   #a89984
 set $background  #000000
 set $transparent #00000000
 
+# Semantic colors
+set $background #0a0f14
+set $background_darker #06090c
+set $accent_inactive #081f2d
+set $accent_active #26a98b
+set $accent_attention #d26939
+set $text #98d1ce 
 # >>> Remove title bar and set border <<<
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
+
 smart_borders on
 
 # Gaps
-gaps inner 0
+gaps inner 9
 gaps outer 0
 smart_gaps on
+
   
 # Border and window colors.
+# border: thin lines around title bar
+# child_border: actual border around window
+# indicator: used for indicating where a new windows will be opened
+#
 # class                 border  backgr. text    indicator child_border
-client.focused          #67CB55 #67CB55 #ffffff #D6E9CF   #67CB55
-client.focused_inactive #67CB55 #67CB55 #ffffff #6A7466   #576953
-client.unfocused        #67CB55 #062C30 #ffffff #6A7466   #576953
-client.urgent           #AA6A7466 #A3AF9E #ffffff #900000   #900000
-client.placeholder      #AA6A7466 #062C30 #ffffff #000000   #404A3C
-
+client.focused          $accent_active $accent_active $text $accent_active $accent_active
+client.focused_inactive $background $background $text $accent_inactive $accent_inactive
+client.unfocused        $background $background $text $accent_inactive $accent_inactive
+client.urgent           $accent_attention $background $text $accent_attention $accent_attention
+client.placeholder      $background $background $text $accent_inactive $accent_inactive
 
 # If using compton and nitrogen change below
 # exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 # TODO: Not sure this is needed.
-exec --no-startup-id nitrogen --restore; sleep 1
+# exec --no-startup-id nitrogen --restore; sleep 1
 
 # >>> Plasma Integration <<<
 
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everything)
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; #border none
+#exec --no-startup-id wmctrl -c Plasma
+#for_window [title="Desktop — Plasma"] kill; floating enable; #border none
 # Set your own wallpaper.
-exec --no-startup-id feh --bg-fill ~/Documents/wallpapers/t3_4rqbbm.jpg
-# Start compton (which is needed for blur, transition effects, etc.)
-exec --no-startup-id killall compton; compton
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/wallpapers/planets_dual.jpg 
 
 # >>> Window rules <<<
 
@@ -262,8 +287,11 @@ no_focus [class="plasmashell" window_type="on_screen_display"]
 # Temporary fix for notifications being centered.
 for_window [class="plasmashell" window_type="notification"] move position 50 50;
 
+# Start i3 workspace name script
+exec --no-startup-id killall autoname_workspaces; ~/.config/i3/i3scripts/autoname_workspaces.py
+
 # Start polybar
-exec --no-startup-id killall polybar; polybar top
+exec --no-startup-id killall polybar; polybar top & polybar top2
 
 # Load preconfigured layout
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/i3_layout_telegram.json'; telegram-desktop"
@@ -272,17 +300,14 @@ exec --no-startup-id killall polybar; polybar top
 
 #exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/fyodor/i3_layout_chromium.json'; chromium --new-window 'https://calendar.google.com/calendar/r?pli=1'; chromium 'https://todoist.com/?lang=en'; chromium 'https://toggl.com/app/timer'; chromium 'https://www.onenote.com/notebooks?auth=1'"
 
-#exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/fyodor/startup-2.json'; kitty fish -c 'neofetch --disk_show --disk_subtitle; exec fish'"
+#exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/fyodor/startup-2.json'; kitty zsh -c 'neofetch --disk_show --disk_subtitle; exec zsh'"
     for_window [class="^Chromium$"] floating disable 
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/comms.json; workspace 4; append_layout /home/fyodor/.layouts/admin1.json; workspace 5; append_layout /home/fyodor/.layouts/chromium.json; workspace 8; append_layout /home/fyodor/.layouts/floating-neofetch.json'"
-#exec --no-startup-id "i3-msg 'workspace 1; append_layout $HOME/testdir/i3_layouts_floating-neofetch.json'"
-exec --no-startup-id "telegram-desktop"
-exec --no-startup-id "chromium --app='https://web.whatsapp.com/'"
-exec --no-startup-id "chromium --new-window 'https://www.youtube.com/playlist?list=PLp2w47Jn5dPnslIk-H6N-GD-5IIDzbXFx'" 
-exec --no-startup-id "chromium --app='https://www.onenote.com/notebooks?auth=1'"
-exec --no-startup-id "chromium --app='https://calendar.google.com/calendar/b/0/r'"
-exec --no-startup-id "kitty fish -c 'neofetch --disk_show --disk_subtitle; exec fish'"
+# Set keyboard layout
+exec --no-startup-id "setxkbmap -layout us -variant intl"
+
+exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/fyodor/.layouts/floating-neofetch.json'"
+exec --no-startup-id "kitty zsh -c 'neofetch --ascii_colors 4 12 --colors 13 13 15 6 14 12 --disk_show --disk_subtitle; exec zsh'"
 
 exec_always --no-startup-id flashfocus
 

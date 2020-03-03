@@ -44,5 +44,6 @@ alias dfgit='/usr/bin/git --git-dir=$HOME/.cfg-git/ --work-tree=$HOME'
 alias vi='/usr/bin/nvim'
 alias sxiv='sxiv -b'
 alias rng='ranger'
-alias cli='xclip -sel clip'
+alias m='neomutt'
+alias c='xclip -sel clip'
 

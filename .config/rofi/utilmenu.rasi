@@ -1,6 +1,5 @@
 * {
-    power-theme: "powermenu";
-	lines: 12;
+	/* lines: 4; */
 	show-icons: true;
 	separator-style: none;
 	hide-scrollbar: true;
@@ -50,7 +49,8 @@ window {
 
 /* prompt entry field */
 #entry {
-	padding: 8;
+    enabled: false;
+	/* padding: 8;*/
 }
 
 
@@ -77,8 +77,8 @@ window {
 }
 
 listview {
-    border: 2px solid 0px 0px;
-    padding: 10px 0px 10px 0px;
+    /* border: 2px solid 0px 0px; */
+    /* padding: 10px 0px 10px 0px; */
 }
 
 /* sidebar item */
@@ -108,6 +108,7 @@ listview {
 
 /*
 #inputbar {
-    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    enabled: false;
+    /* children:   [  ]; */
 }
 */
