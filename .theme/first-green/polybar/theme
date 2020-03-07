@@ -1,0 +1,6 @@
+; Fonts
+
+font-0 = Roboto:pixelsize=11;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = Font Awesome 5 Free Solid:pixelsize=12;1
+

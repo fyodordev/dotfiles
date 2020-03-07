@@ -17,17 +17,11 @@
 ;==========================================================
 
 [colors]
-background = ${xrdb:color0:#222}
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #dfdfdf
-primary = #FFF
-secondary = #B2535B
-alert = #B2535B
-
+include-file = /home/fyodor/.config/polybar/colors
 
 [bar/top]
+include-file = /home/fyodor/.config/polybar/theme
+
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -37,20 +31,8 @@ radius = 0
 fixed-center = false
 ;separator =
 
-;--------;
-; COLORS ;
-;--------;
-
-background = #ff11232a
-background-alt = #555
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #E1D4AE
-kecondary = #e60053
-alert = #B2535B
-
-;background = ${colors.background}
-;foreground = ${colors.foreground}
+background = ${colors.background}
+foreground = ${colors.foreground}
 
 line-size = 0
 line-color = #f00
@@ -63,18 +45,15 @@ padding-right = 3
 
 module-margin-left = 4
 module-margin-right = 4
+
 # Doesn't work for some reason.
 ;margin-top = 100
 ;margin-bottom = 100
 
-font-0 = fixed:pixelsize=11;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Font Awesome 5 Free Solid:pixelsize=12;1
-
 ;xwindow for window names
 modules-left = i3 
-;modules-center = backlight alsa
-modules-right = vpnstatus wlan eth filesystem battery1 date
+modules-center = date
+modules-right = vpnstatus wlan eth filesystem battery1
 
 ;tray-position = right
 ;tray-padding = 2
@@ -127,13 +106,13 @@ mount-0 = /
 
 label-mounted =   %free%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
@@ -162,12 +141,12 @@ wrapping-scroll = false
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.foreground}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-background = ${colors.i3-active}
+label-focused-underline= ${colors.foreground}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -217,7 +196,7 @@ bar-fill-font = 2
 bar-fill-foreground = #9f78e1
 bar-empty = ─
 bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+bar-empty-foreground = ${colors.foreground}
 
 [module/backlight]
 type = internal/backlight
@@ -284,7 +263,7 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
@@ -293,7 +272,7 @@ interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-prefix-foreground = ${colors.foreground}
 label-connected = %local_ip%
 
 format-disconnected =
@@ -314,7 +293,7 @@ time = "   %H:%M:%S"
 time-alt = "   %H:%M:%S"
 
 format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 
 label = %date% %time%
 
@@ -345,14 +324,14 @@ format-charging =  <ramp-capacity> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = "  "
-format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-prefix-foreground = ${colors.foreground}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 
 [module/temperature]

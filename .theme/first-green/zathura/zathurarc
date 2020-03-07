@@ -1,0 +1,16 @@
+# Good reference: https://gist.github.com/michaelmrose/9595075b43f24aa903fa
+
+set default-bg "#0e2629"
+# set default-bg "#111111"
+
+set recolor "true"
+set recolor-lightcolor "#062C30"
+set recolor-darkcolor "#dddddd"
+
+map <C-i> recolor
+set guioptions ""
+
+set selection-clipboard clipboard
+
+# This fixes links not being open in a browser.
+set sandbox none
