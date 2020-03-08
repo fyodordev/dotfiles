@@ -1,0 +1,6 @@
+#!/bin/bash
+
+NEWIDX=$(free-i3-workspace)
+
+i3-msg move container to workspace $NEWIDX
+i3-msg workspace $NEWIDX

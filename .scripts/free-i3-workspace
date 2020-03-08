@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Old way which just gets the highest workspace index + 1
+#i3-msg workspace $(($(i3-msg -t get_workspaces | tr , '\n' | grep '"num":' | cut -d : -f 2 | sort -rn | head -1) + 1))
+
+# Lines with extra zero added last
+WORKSPACENRS=$(i3-msg -t get_workspaces | tr , '\n' | grep '"num":' | cut -d : -f 2 | sort -n)$'\n'0
+COUNT=0
+RESULTNR=0
+
+# Iterate through list of workspace (plus zero at the end), compare with sequential array of numbers, pick first number of those that doesn't match the input array.
+while IFS= read -r line;do
+    COUNT=$((COUNT + 1))
+    if [ "$COUNT" -ne "$line" ];then
+        RESULTNR=$COUNT
+        break
+    fi
+done <<< "$WORKSPACENRS"
+echo $RESULTNR
+
