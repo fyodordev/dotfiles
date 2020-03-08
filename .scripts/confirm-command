@@ -1,7 +1,11 @@
 #!/bin/bash
 
-#read -p "Confirm sending mail [yes]: " response </dev/tty
-response=$(kdialog --password "Confirm sending mail [yes]: ")
+# Dependencies:
+#  - kdialog
+
+response=$(kdialog --inputbox "Confirm sending mail [yes]: ")
+#echo $response
+#read -p "Confirm sending mail [yes]: " response < /dev/tty
 cmd="$*"
 
 if [ "$response" == "yes" ]; then

@@ -101,6 +101,19 @@ git config --global user.signingkey <YOUR GPG KEY ID>
 
 docker docker-compose code mariadb nodejs
 
+### SSHFS
+
+Install ssfs and fuse
+
+Make fuse group and add your user to it:
+
+```
+sudo groupadd fuse
+sudo usermod -a -G fuse fyodor
+```
+
+Use `sshfs fyodor@192.168.1.101:/home/fyodor /home/fyodor/testmountpoint -p 38952`
+
 ### Setup zsh
 
 `chsh -s /bin/zsh <user>`
@@ -139,6 +152,8 @@ yay -S
  - ttf-ms-fonts: Core MS fonts. Makes stuff look normal.
  - python37-pillow: Required for image previews in ranger.
  - snapd
+
+Install https://github.com/alexanderjeurissen/ranger_devicons for icons in ranger.
 
 ### Setup snap packages
 
@@ -339,8 +354,16 @@ user fyodor, group users, rw-rw-rw
 sudo chown -R fyodor:users /data
 sudo chmod -R 666 /data
 
+Scrubbing: `sudo btrfs scrub start /data`
+
 Fixing uncorrectable errors after scrub:
+
+Errors are documented in the kernel log, retrieve with following command:
+`journalctl --output cat | grep 'BTRFS .* i/o error' | sort | uniq | less`
+
 http://marc.merlins.org/perso/btrfs/post_2014-03-19_Btrfs-Tips_-Btrfs-Scrub-and-Btrfs-Filesystem-Repair.html
+
+
 
 ## Common Issues
 
@@ -396,6 +419,5 @@ This will overwrite the blocks, which are marked in the mapfile with `-` with ze
 ## System Maintenance
 
 ### Uprading System with Snapshot backups
-
 
 

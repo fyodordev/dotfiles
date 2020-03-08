@@ -249,6 +249,7 @@ exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/wallpapers/planets_d
   # For the first time, manually resize them, i3 will remember the setting for floating windows
   
     for_window [class="octopi"] floating enable
+    for_window [class="Xdialog"] floating enable
     for_window [class="yakuake"] floating enable;
     for_window [class="lattedock"] floating enable;
     for_window [class="plasmashell"] floating enable;
@@ -288,7 +289,7 @@ no_focus [class="plasmashell" window_type="on_screen_display"]
 for_window [class="plasmashell" window_type="notification"] move position 50 50;
 
 # Start i3 workspace name script
-exec --no-startup-id killall autoname_workspaces; ~/.config/i3/i3scripts/autoname_workspaces.py
+exec --no-startup-id killall autoname_workspaces; ~/.config/i3/i3scripts/autoname_workspaces.py &
 
 # Start polybar
 exec --no-startup-id killall polybar; polybar top & polybar top2
