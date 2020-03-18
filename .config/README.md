@@ -122,14 +122,25 @@ Use `sshfs fyodor@192.168.1.101:/home/fyodor /home/fyodor/testmountpoint -p 3895
 ### Dotfile management
 
 [As outlined here](https://www.atlassian.com/git/tutorials/dotfiles)
+ttps://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.htmlhttps://harfangk.github.io/2016/09/18/manage-dotfiles-with-a-git-bare-repository.html
+https://wiki.archlinux.org/index.php/Dotfiles#Tracking_dotfiles_directly_with_Git
 
-`echo ".dotfiles-repo" >> .gitignore`
-Add to `.profile`:
+Load in each shell (i.e. add to `.profile`):
 ```
 alias dfgit='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 ```
-Run `git clone --bare git@github.com:fyodordev/manjaro-dotfiles.git $HOME/.dotfiles-repo`
-Run `dfgit checkout`
+
+Execute:
+```
+echo ".dotfiles-repo" >> .gitignore
+git clone --bare git@github.com:fyodordev/manjaro-dotfiles.git $HOME/.dotfiles-repo
+dfgit checkout`
+dfgit config --local status.showUntrackedFiles no
+```
+
+Goto the bare repo folder and open the `config` file. Add `fetch = +refs/heads/*:refs/remotes/origin/*` below the url line from remote.
+
+
 
 ### System time sync
 
@@ -258,9 +269,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 
 ```
 
-*Using the SSH key*
-
-List the loaded key with ssh-add -L, this can be copied to a remote host for authentication.
 
 *Unlock both keys using PAM on Login*
 
@@ -278,6 +286,20 @@ use-agent
 ```
 
 Add all the GPG keygrips, including those of the subkeys to `~/.pam-gnupg`. They should all be exactly 40 characters in length.
+
+*Using the keys*
+
+Get ssh key: `ssh-add -L`, can be copied to a remote host for authentication.
+GPG List keys with `gpg --list-secret-keys --keyid-format LONG`
+Run on the key you want `gpg --armor --export 3AA5C34371567BD2 | xclip -selection clipboard` and copy the output.
+
+
+For git usage if using ssh keys fails:
+1. Clone via https, entering your credentials
+2. Go into the clone directory and run `git config credential.helper store`
+3. Run something like git fetch and type in credentials again.
+4. Credentials should now be saved for future use.
+
 
 ### Setup SSH
 
@@ -364,6 +386,23 @@ Errors are documented in the kernel log, retrieve with following command:
 http://marc.merlins.org/perso/btrfs/post_2014-03-19_Btrfs-Tips_-Btrfs-Scrub-and-Btrfs-Filesystem-Repair.html
 
 
+## System upgrades
+
+1. Make an LVM snapshot:
+
+`sudo lvcreate -s -L 36G -n arch_snapshot /dev/arch-lvm/arch`
+
+to drop snapshot use:
+
+`lvremove group/snap-name`
+
+to merge snapshot use:
+
+`lvconvert --merge group/snap-name`
+
+to check snapshot data usage run `lvs`.
+
+
 
 ## Common Issues
 
@@ -374,10 +413,15 @@ Things to try:
     - Make sure no "auto" modes are selected -> Then export the configuration file
     - Finally move the file to /etc/X11/xorg.conf.d
  - Switch to onboard graphics possibly https://dev.to/brown121407/switch-intel-and-nvidia-gpus-in-arch-linux-5cf2
- - Check that it's not just the browser
+ - Check that it's not just the browser -> THAT WAS IT
     - Possible fix in firefox: about:config -> layers.acceleration.force-enabled -> true -> restart firefox
     - Try chromium
  - Picom/compton backend settings
+
+
+### 2 second freeze and monitor going black on terminal open
+
+The problem seems to arise sometimes when starting a new shell. Opening a new terminal emulator instance is not needed, apparently.
 
 
 ### Unreadable files on hard drive
@@ -420,4 +464,13 @@ This will overwrite the blocks, which are marked in the mapfile with `-` with ze
 
 ### Uprading System with Snapshot backups
 
+
+
+# Config guide
+
+## Launching a window in floating mode, e.g. terminal
+
+In the i3 config have a line like `for_window [class="custom-floating"] floating enable`.
+Most applications support setting a custom window classing using "--class".
+So for instance to launch floating terminal use `kitty --class custom-floating`
 
