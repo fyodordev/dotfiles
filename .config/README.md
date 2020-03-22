@@ -411,7 +411,7 @@ http://marc.merlins.org/perso/btrfs/post_2014-03-19_Btrfs-Tips_-Btrfs-Scrub-and-
 
 to drop snapshot use:
 
-`lvremove group/snap-name`
+`lvremove group/snap-name` (i.e. arch-lvm/arch_snapshot)
 
 to merge snapshot use:
 

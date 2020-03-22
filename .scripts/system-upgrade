@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if sudo lvs | grep -qs 'arch_snapshot'; then
+    echo "Snapshot already exists, please remove using 'lvremove arch-lvm/arch_snapshot', then run 'system-upgrade' again." & sudo lvs;
+else
+    echo 'Creating snapshot...';
+    sudo lvcreate -s -L 36G -n arch_snapshot /dev/arch-lvm/arch && sudo lvs && yay -Syyu; 
+fi
+

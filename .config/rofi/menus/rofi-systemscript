@@ -2,18 +2,18 @@
 
 
 # options to be displayed
-option0="Screenshot"
+option0="Upgrade"
 
 if [ -z $@ ]
 then
     # Script gets called to get list of options.
-    options="$option0\n$option1\n$option2"
+    options="$option0\n"
     printf $options;
 else
     # Script gets called with chosen option. 
     chosen=$@;
     case $chosen in
         $option0)
-            nohup "screenshot_area_rofi" &>/dev/null & disown;;
+            kitty fish -c 'system-upgrade; fish' &>/dev/null & disown;;
     esac
 fi
