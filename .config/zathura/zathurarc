@@ -1,8 +1,1 @@
-set default-bg "#1C252E"
-set recolor-lightcolor "#0d1926"
-set recolor-darkcolor "#F9F5ED"
-map <C-i> recolor
-set guioptions ""
-
-# This fixes links not being open in a browser.
-set sandbox none
+/home/fyodor/.theme/active/zathura/zathurarc

@@ -2,3 +2,5 @@
 
 # Mount filesystem
 sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$(pass Email/fedorpavlovitch.perejoguine@students.fhnw.ch),mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad
+#sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$(pass Email/fedorpavlovitch.perejoguine@students.fhnw.ch),mfsymlinks //fs.edu.ds.fhnw.ch/e_18_data11$/ /mnt/fhnw_ad;
+

@@ -64,7 +64,14 @@ This copies the glyph to your keyboardll (Doesn't work in fish for some reason)
 ### Bootstrap yay install
 
 `git clone https://aur.archlinux.org/yay.git && cd yay && makepkg –si && ./pkg/yay/usr/bin/yay -S yay --nodiffmenu && cd .. && rm -rf yay && yay -save --nodiffmenu`
- 
+
+### Shell setup
+
+1. Install fish
+2. Install oh my fish using `curl -L https://get.oh-my.fish | fish`
+3. `omf install foreign-env`
+4. `omf install vcs`
+
 
 ### System time 
 
@@ -94,8 +101,18 @@ Or earlyoom:
 git config --global user.name "John Doe"
 git config --global user.email johndoe@example.com
 git config --global commit.gpgsign true
-git config --global user.signingkey <YOUR GPG KEY ID>
+git config --global user.signingkey <YOUR GPG KEY ID> 
 ```
+
+Where GPG KEY ID is the small number of the individual subkey after the slash i.e. `AEB1AE659CEDF1B3` in
+```
+sec   rsa4096/AEB1AE659CEDF1B3 2020-03-18 [SC]
+      71CE6AAE0FB5F27E1EC5F295AEB1AE659CEDF1B3
+uid                 [ultimate] Fyodor Perejoguine <fyodordev@gmail.com>
+ssb   rsa4096/8F21BB5AB03A6033 2020-03-18 [E]
+ssb   rsa4096/625FAD63A8BB6F85 2020-03-18 [A]
+```
+
 
 ### Devtools
 
@@ -292,6 +309,7 @@ Add all the GPG keygrips, including those of the subkeys to `~/.pam-gnupg`. They
 Get ssh key: `ssh-add -L`, can be copied to a remote host for authentication.
 GPG List keys with `gpg --list-secret-keys --keyid-format LONG`
 Run on the key you want `gpg --armor --export 3AA5C34371567BD2 | xclip -selection clipboard` and copy the output.
+Note the GPG ID here is the same as referred to in section *Setup git*.
 
 
 For git usage if using ssh keys fails:
@@ -327,6 +345,7 @@ PasswordAuthentication no
 X11Forwarding no
 
 # More secure algorithm keys and ciphers only
+```
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 KexAlgorithms curve25519-sha256@libssh.org
@@ -336,8 +355,6 @@ MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@op
 
 Possibly identify further problems using `ssh-audit` (Available from the AUR)
 
-Run on your client machine: ``
-```
 
 ### Btrfs Setup
 
@@ -400,7 +417,7 @@ to merge snapshot use:
 
 `lvconvert --merge group/snap-name`
 
-to check snapshot data usage run `lvs`.
+to check snapshot data usage run `sudo lvs`.
 
 
 

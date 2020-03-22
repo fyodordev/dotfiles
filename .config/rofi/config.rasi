@@ -1,3 +1,5 @@
+@import "colors"
+
 * {
     power-theme: "powermenu";
 	lines: 12;
@@ -7,31 +9,24 @@
 	terminal:                       "kitty";
 	sidebar-mode: true;
 
-    padding: 0;
-	/*padding: 30;*/
 	opacity:                        30;
-	/*width:                          40;*/
+	width:                          800;
 	columns:                        1;
-	font:                           "DINPro Regular 18";
+	font:                           @font-primary;
 
     /* highlighted text */
-    highlight:     bold #44ccff; 
+    /* highlight: bold @color-primary;  */
 
 	background-color: rgba(10,0,0,0);
-	text-color: #dddddd;
+	text-color: @color-foreground;
 	prompt: "disable";
-	border-color: #268bd2;
-
-	/*!                  'background', 'border';*/
-	/* bw:                             10;*/
+	border-color: @color-primary;
 }
 
 window {
-    border: 3;
-	padding: 18;
-	fg:                             #5294E2aa;
-	bg:                             #5d729faa;
-	background-color: #000000aa;
+    border: 5;
+	padding: 0;
+	background-color: @color-background;
 	opacity: 80;
 }
 
@@ -40,32 +35,34 @@ window {
 }
 
 #element {
-	padding: 2 4 4 4;
+	padding: 7 10 9 16;
 }
 
 /* The currently selected line/element */
-#element selected.normal {
-    background-color: #8899aaaa;
+#element selected {
+    border: 1 0 1 0;
+    background-color: @color-primary-darker;
 }
 
 /* prompt entry field */
 #entry {
-	padding: 8;
+	padding: 12 10 9 16;
+	/* padding: 16; */
 }
 
 
 /* entry that is active in general (i.e. active window) */
 #element active {
-    color: #ff5555;
+    color: @color-active;
 }
 
 /* element that is selected and active */
 #element selected active {
-    color: #55ff55;
+    color: @color-active;
 }
 
 #element selected urgent {
-    color: #ff5555;
+    color: @color-urgent;
 }
 
 #sidebar {
@@ -73,32 +70,36 @@ window {
     highlight: #ffffff;
     /*border: 2px 0px 0px 0px;*/
     /*background-color: @lightblack;*/
-    padding: 10px;
+    padding: 0px;
 }
 
 listview {
-    border: 2px solid 0px 0px;
-    padding: 10px 0px 10px 0px;
+    /*border: 2px solid 0px 2px;*/
+    padding: 0px 0px 16px 0px;
 }
 
 /* sidebar item */
 #button {
-    font: "FontAwesome 22";
-    padding: 6px;
+    font: @font-secondary;
+    margin: 8;
+    padding: 2px;
+    border: 0 0 0 0;
     /*border: 2px 0px 2px 2px;*/
     /*border-radius: 4px 0px 0px 4px;*/
     background-color: @tlightblack;
     border-color: @foreground;
-    color: @foreground;
-    horizontal-align: 0.5;
+    color: @color-foreground;
+    horizontal-align: 0.1;
 }
 
 /* selected sidebar item */
 #button selected normal {
-    color: @dark;
-    /*border: 2px 0px 2px 2px;*/
-    background-color: #444444;
-    border-color: @foreground;
+    color: @color-active;
+    font-weight: 800;
+    /*border: 0px 0px 2px 2px;*/
+    /* background-color: #444444; */
+    border: 0 0 2 0;
+    border-color: @color-primary;
 }
 
 #vertb {

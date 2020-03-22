@@ -1,0 +1,12 @@
+; Colors
+
+background = #0011232a
+foreground = #dfdfdf
+foreground-faint = #ff11232a
+accent = #E1D4AE
+
+alert = #B2535B
+
+i3-active = #ff447788
+i3-active-faint = #ff11232a
+
