@@ -1,2 +1,2 @@
 #!/bin/bash
-dtrx $1
+dtrx "$1"
