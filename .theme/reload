@@ -2,4 +2,9 @@
 
 # Reload i3
 ~/.scripts/i3-create-config/create_config;
+# Restart i3
 i3-msg "restart" > /dev/null;
+# Restart various programs and services.
+killall autoname_workspaces; nohup ~/.config/i3/i3scripts/autoname_workspaces.py &
+killall polybar; nohup polybar top & nohup polybar top2 & nohup polybar top3 &
+feh --bg-fill --no-xinerama ~/.theme/active/wallpaper.jpg
