@@ -1,0 +1,4 @@
+#!/bin/bash
+
+i3-msg [workspace='300'] move to workspace current
+
