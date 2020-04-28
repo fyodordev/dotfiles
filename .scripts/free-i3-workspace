@@ -5,16 +5,22 @@
 
 # Lines with extra zero added last
 WORKSPACENRS=$(i3-msg -t get_workspaces | tr , '\n' | grep '"num":' | cut -d : -f 2 | sort -n)$'\n'0
-COUNT=0
-RESULTNR=0
+COUNT=1
+RESULTNR=1
 
 # Iterate through list of workspace (plus zero at the end), compare with sequential array of numbers, pick first number of those that doesn't match the input array.
 while IFS= read -r line;do
-    COUNT=$((COUNT + 1))
     if [ "$COUNT" -ne "$line" ];then
-        RESULTNR=$COUNT
-        break
+        if [ "$COUNT" -gt "$line" ]; then
+            # When number increased by more than it should, meaning there's a gap
+            break
+        fi
+        # If previous number was repeated (so that it's less than the increased counter), do nothing.
+    else
+        # When number matched the previous + 1 exactly
+        COUNT=$((COUNT + 1))
     fi
+    RESULTNR=$COUNT
 done <<< "$WORKSPACENRS"
 echo $RESULTNR
 
