@@ -9,14 +9,23 @@ COUNT=1
 RESULTNR=1
 
 # Iterate through list of workspace (plus zero at the end), compare with sequential array of numbers, pick first number of those that doesn't match the input array.
+
+# Iterate counter one time, then check if you find number that matches it. If yes, increase it again.  If number found that's greater, break.
 while IFS= read -r line;do
+    # echo "=========="
+    # echo "line: "$line;
+    # echo "count: "$COUNT;
     if [ "$COUNT" -ne "$line" ];then
-        if [ "$COUNT" -gt "$line" ]; then
+        # echo "count is not equal to line"
+        if [ "$line" -gt "$COUNT" ]; then
+            # echo "count is greater than line, break"
             # When number increased by more than it should, meaning there's a gap
             break
         fi
         # If previous number was repeated (so that it's less than the increased counter), do nothing.
+        # echo "count not greater than line, do nothing"
     else
+        # echo "count is equal to line"
         # When number matched the previous + 1 exactly
         COUNT=$((COUNT + 1))
     fi
