@@ -3,13 +3,11 @@
 
 ## Install System from live ISO
 
-Pacstrap /mnt base base-devel linux linux-firmware neovim lvm2 man-db man-pages sudo dhclient 
+`pacstrap /mnt base base-devel linux linux-firmware neovim lvm2 man-db man-pages sudo dhclient`
 
-Also add intel-ucode or amd-ucode depending on your processor 
+Also add `intel-ucode` or `amd-ucode` depending on your processor 
 
 WiFi: Install packages `dialog` and `wpa_supplicant`
-
- 
 
 `genfstab -U /mnt >> /mnt/etc/fstab`
 
@@ -23,10 +21,33 @@ Uncomment `en_US.UTF-8` and `de_CH.UTF-8` in `/etc/locale`, run locale-gen in so
 Use helper tool `tzselect` to figure out your timezone.
 Set timezone settings using `ln -s /usr/share/zoneinfo/Zone/SubZone /etc/localtime`, replacing `Zone` and `SubZone`.
 
-To set keyboard layout put KEYMAP=us-intl or KEYMAP=altgr-intl into /etc/vconsole.conf
+`setxkbmap -print -verbose 10` to view current settings.
 
+The options determining keyboard layout are: `Model, Layout, Variant, Options`. They can be viewed using:
+```
+localectl list-x11-keymap-models
+localectl list-x11-keymap-layouts
+localectl list-x11-keymap-variants [layout]
+localectl list-x11-keymap-options
+```
 
-To set on the fly use e.g. `setxkbmap us_intl`. To look up `<layout>_<variant>` use localectl list-x11-keymap-layouts and localectl list-x11-keymap-variants respectively.
+Put either in following format into an xorg conf file `00-keyboard.conf`:
+```
+Section "InputClass"
+        Identifier "system-keyboard"
+        MatchIsKeyboard "on"
+        Option "XkbLayout" "cz,us"
+        Option "XkbModel" "pc104"
+        Option "XkbVariant" ",dvorak"
+        Option "XkbOptions" "grp:alt_shift_toggle"
+EndSection
+```
+
+Or use localectl which regenerates the 00-keyboard.conf file on every startup.
+`localectl --no-convert set-x11-keymap us pc105 altgr-intl nodeadkeys,caps:ctrl_modifier`
+
+Or use `setxkbmap [-model xkb_model] [-layout xkb_layout] [-variant xkb_variant] [-option xkb_options]` to set via command.
+Put command into .xinitrc or .xprofile to set for individual user.
 
 
 ## Basic system configuration
@@ -77,6 +98,10 @@ This copies the glyph to your keyboardll (Doesn't work in fish for some reason)
 
 `hwclock –systohc` 
 
+Start/enable `systemd-timesyncd` which should come with systemd by default. The configuration resides in `/etc/systemd/timesyncd.conf` and should already include some sensible defaults.
+If running dual boot make sure to set Windows to UTC mode.
+
+
 ### Firewall basic configuration
 
 ```
@@ -90,9 +115,62 @@ To ssh server config add option to not allow password authentication.
 
 ### Setup swap file
 
+How much to allocate
+
+If RAM is less than 1 GB, swap size should be at least the size of RAM and at most double the size of RAM
+If RAM is more than 1 GB, swap size should be at least equal to the square root of the RAM size and at most double the size of RAM
+If hibernation is used, swap size should be equal to size of RAM plus the square root of the RAM size
+
+Where
+
+/swapfile
+
+Commands:
+
+Btrfs setup:
+```
+truncate -s 0 /swapfile
+chattr +C /swapfile
+btrfs property set /swapfile compression none
+```
+
+```
+fallocate -l 24G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+```
+
+Should see `Setting up swapspace version 1, size = 24 GiB (25769799680 bytes)
+no label, UUID=c9981e9c-f7d3-4b1c-8f92-5172d4b1e72f`
+
+
+## Setup hibernation
+
+
+Need swapfile first
+
+Add resume kernel parameter:
+Edit /etc/default/grub and append your kernel options between the quotes in the GRUB_CMDLINE_LINUX_DEFAULT line:
+
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=/dev/mapper/arch--lvm-arch resume_offset=80990208"
+
+Then regenerate grub.cfg with  grub-mkconfig -o /boot/grub/grub.cfg
+
+
+Add resume parameter to the /etc/mkinitcpio.conf after lvm2 and reload with mkinitcpio -p linux.
+
+
+Now hibernation should work using `systemctl hibernate`
+
+
+## Other memory optimizations
+
 Also activate zswap by adding `zswap.enabled=1` to kernel parameters.
 
 Or earlyoom: 
+
+
 
 
 ### Setup git
@@ -158,11 +236,6 @@ dfgit config --local status.showUntrackedFiles no
 Goto the bare repo folder and open the `config` file. Add `fetch = +refs/heads/*:refs/remotes/origin/*` below the url line from remote.
 
 
-
-### System time sync
-
-Start/enable `systemd-timesyncd` which should come with systemd by default. The configuration resides in `/etc/systemd/timesyncd.conf` and should already include some sensible defaults.
-If running dual boot make sure to set Windows to UTC mode.
 
 
 ### Other
@@ -343,6 +416,7 @@ ClientAliveCountMax 2
 PasswordAuthentication no
 # Disable X11Forwarding
 X11Forwarding no
+```
 
 # More secure algorithm keys and ciphers only
 ```
@@ -359,6 +433,7 @@ Possibly identify further problems using `ssh-audit` (Available from the AUR)
 ### Btrfs Setup
 
 Create new:
+
 ```
 sudo parted /dev/sdx
 print
@@ -403,6 +478,9 @@ Errors are documented in the kernel log, retrieve with following command:
 http://marc.merlins.org/perso/btrfs/post_2014-03-19_Btrfs-Tips_-Btrfs-Scrub-and-Btrfs-Filesystem-Repair.html
 
 
+(Regenerate initramfs using `mkinitcpio -p linux`)
+
+
 ## System upgrades
 
 1. Make an LVM snapshot:
@@ -418,6 +496,26 @@ to merge snapshot use:
 `lvconvert --merge group/snap-name`
 
 to check snapshot data usage run `sudo lvs`.
+
+
+## Backup
+
+Initialize repo:
+`borg init --encryption=none /path/to/repo`
+
+Borg example command line:
+`sudo borg --progress create --compression zstd /mnt/backup/borg-backup::09-03-20 '/data/Archived RAW' '/data/Personal Data' /data/Work`
+
+
+
+## Screen/Display setup
+
+Use nvidia settings to generate configuration file for your displays.
+Put the configuration file in/as `/etc/X11/xorg.conf.d/20-nvidia.conf`.
+
+## LaTeX Setup and Usage
+
+Install `texlive-most` from official arch repository.
 
 
 
@@ -476,11 +574,46 @@ To do this use ddrescue --fill-mode=-, e.g.:
 This will overwrite the blocks, which are marked in the mapfile with `-` with zeroes.
 
 
+## Keyboard setup
+
+Get keycodes when pressing keys for binding etc:
+```
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+```
+
+Check xorg keyboard settings:
+```
+setxkbmap -print -verbose 10
+```
+
+## Btrfs filesystem doesnt mount
+
+If dmesg error log when mount shows:
+```
+parent transid verify failed on 733233152 wanted 7235 found 7243
+open_ctree failed
+```
+
+Writeup on how to fix:
+http://infotinks.com/btrfs-transid-issue-explained-fix/
+
+
+OR https://www.suse.com/support/kb/doc/?id=000018769
+
+https://btrfs.wiki.kernel.org/index.php/FAQ
+https://ownyourbits.com/2019/03/03/how-to-recover-a-btrfs-partition/
+
+
+
 
 ## System Maintenance
 
 ### Uprading System with Snapshot backups
 
+
+### Backing up with rsync
+
+`rsync -av --no-i-r --info=progress2 src/ dest/`
 
 
 # Config guide
