@@ -47,6 +47,7 @@ alias vi='/usr/bin/nvim'
 alias sxiv='sxiv -b'
 alias r='ranger'
 alias m='neomutt'
+alias c='code .'
 alias q='exit'
 alias cli='xclip -sel clip'
 
