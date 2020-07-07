@@ -2,14 +2,15 @@
 
 
 # options to be displayed
-option0="logout"
+option0="hibernate"
 option1="reboot"
 option2="shutdown"
+option3="logout"
 
 if [ -z $@ ]
 then
     # Script gets called to get list of options.
-    options="$option0\n$option1\n$option2"
+    options="$option0\n$option1\n$option2\n$option3"
     printf $options;
 else
     # Script gets called with chosen option. 
@@ -17,10 +18,13 @@ else
     case $chosen in
         $option0)
             #nohup kitty zsh -c 'echo "blah"; exec zsh' &> /dev/null & disown;;  #zsh -c 'echo "test"'
-            pkill -KILL -u $(whoami);;
+            systemctl hibernate;;
         $option1)
             reboot;;
         $option2)
             shutdown -h now;;
+        $option3)
+            #nohup kitty zsh -c 'echo "blah"; exec zsh' &> /dev/null & disown;;  #zsh -c 'echo "test"'
+            pkill -KILL -u $(whoami);;
     esac
 fi
