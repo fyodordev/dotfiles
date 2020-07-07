@@ -1,14 +1,14 @@
 {
-    "workbench.colorTheme": "Community Material Theme Ocean",
+    "workbench.colorTheme": "GitHub Plus",
     "window.menuBarVisibility": "toggle",
     "editor.fontFamily": "Hack",
-    "editor.fontSize": 18,
+    "editor.fontSize": 14,
     "editor.fontLigatures": false,
     "editor.lineSize": 24,
     "editor.rulers": [
 	    100
     ],
-    "terminal.integrated.fontSize": 18,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.lineSize": 22,
     "vim.handleKeys": { 
 	"<C-j>": false,
