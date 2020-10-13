@@ -6,7 +6,8 @@
 # Source path must include directories which in turn have a symlink 'ad' inside.
 SOURCE_PATH=$HOME"/Documents/Studium/ad-symlinks"
 TARGET_PATH=$HOME"/Documents/studium-module"
-EXCLUDE_PATTERN="*.mp4"
+# EXCLUDE_PATTERN="*.mp4"
+EXCLUDE_PATTERN=""
 
 
 ARG=$1
@@ -17,7 +18,7 @@ sync_folder() {
 	cloudpath=${1%/*}
 	cloudlink="$TARGET_PATH/$foldername/cloud"
 	rm -rf $cloudlink
-	ln -s "$cloudpath" "$cloudlink"
+	# ln -s "$cloudpath" "$cloudlink"
 	mkdir -p "$targetname"
 	# Previously used: rsync -r --info=progress2 symlink/ ~/Documents/fhnw_ad_mirror/itsm/
 
@@ -37,7 +38,7 @@ sync_folder() {
 	#rsync -rtm --info=progress2 --delete
 }
 
-ls -d -1 "$SOURCE_PATH/"*/ad |
+ls -d -1 "$TARGET_PATH/"*/ad |
 while read -r a;
 	do sync_folder "$a";
 done
