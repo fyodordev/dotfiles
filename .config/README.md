@@ -528,6 +528,19 @@ Install `texlive-most` from official arch repository.
 
 ## Common Issues
 
+
+### Hissing noise when not playing audio
+
+this is usually due to pulseaudio module that suspends audio playback to save power
+to check further use:
+pactl unload-module module-suspend-on-idle
+and should be able to close pavucontrol without problem returning
+
+permanent fix requires edit to /etc/pulse/default.pa
+add ‘#’ to comment out line to load module
+
+`# load-module module-suspend-on-idle`
+
 ### Screen Tearing
 
 Things to try:
