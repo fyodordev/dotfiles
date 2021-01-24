@@ -3,7 +3,7 @@ IMAPStore unnam3d82-remote
 Host imap.gmail.com
 Port  993
 User unnam3d82@gmail.com
-PassCmd "pass mutt-wizard-unnam3d82"
+PassCmd "pass Email/unnam3d82@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -28,7 +28,7 @@ IMAPStore live-mail-remote
 Host imap-mail.outlook.com
 Port  993
 User fjodor.perejoguine@live.de
-PassCmd "pass mutt-wizard-live-mail"
+PassCmd "pass Email/fjodor.perejoguine@live.de"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -53,7 +53,7 @@ IMAPStore fhnw-remote
 Host imap.fhnw.ch
 Port  993
 User fedorpavlovitch.perejoguine@students.fhnw.ch 
-PassCmd "pass mutt-wizard-fhnw"
+PassCmd "pass Email/fedorpavlovitch.perejoguine@students.fhnw.ch"
 SSLType IMAPS
 AuthMechs PLAIN
 #CertificateFile /etc/ssl/certs/ca-certificates.crt
@@ -82,7 +82,7 @@ IMAPStore computerworks-remote
 Host mail.computerworks.ch
 Port  993
 User fperejoguine@computerworks.ch
-PassCmd "pass mutt-wizard-computerworks"
+PassCmd "pass Email/fperejoguine@computerworks.ch"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -108,7 +108,7 @@ IMAPStore gmail-fyodordev-remote
 Host imap.gmail.com
 Port  993
 User fyodordev@gmail.com
-PassCmd "pass mutt-wizard-gmail-fyodordev"
+PassCmd "pass Email/fyodordev@gmail.com"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
@@ -122,6 +122,32 @@ Channel gmail-fyodordev
 Expunge Both
 Master :gmail-fyodordev-remote:
 Slave :gmail-fyodordev-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+ExpireUnread no
+# End profile
+
+
+IMAPStore gmail-fyodorperejoguine-remote
+Host imap.gmail.com
+Port  993
+User fyodor.perejoguine@gmail.com
+PassCmd "pass Email/fyodor.perejoguine@gmail.com"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore gmail-fyodorperejoguine-local
+Subfolders Verbatim
+Path ~/.local/share/mail/gmail-fyodorperejoguine/
+Inbox ~/.local/share/mail/gmail-fyodorperejoguine/INBOX
+Flatten .
+
+Channel gmail-fyodorperejoguine
+Expunge Both
+Master :gmail-fyodorperejoguine-remote:
+Slave :gmail-fyodorperejoguine-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *

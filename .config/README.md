@@ -256,6 +256,13 @@ yay -S
 
 Install https://github.com/alexanderjeurissen/ranger_devicons for icons in ranger.
 
+
+### Polybar
+
+`pacman -S polybar`
+
+Install autoname_workspaces script for i3 to dynamically change icons.
+
 ### Setup snap packages
 
  - Enable snap packages `sudo systemctl enable --now snapd.socket`
@@ -603,6 +610,12 @@ OR https://www.suse.com/support/kb/doc/?id=000018769
 https://btrfs.wiki.kernel.org/index.php/FAQ
 https://ownyourbits.com/2019/03/03/how-to-recover-a-btrfs-partition/
 
+
+
+## LightDM
+
+
+Enable nopassword login by adding user to the nopasswrd group, altering the lightdm PAM config.
 
 
 

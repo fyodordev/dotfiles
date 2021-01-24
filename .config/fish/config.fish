@@ -52,6 +52,6 @@ alias q='exit'
 alias cli='xclip -sel clip'
 
 
-
+pyenv init - | source
 
 
