@@ -115,6 +115,8 @@ To ssh server config add option to not allow password authentication.
 
 ### Setup swap file
 
+https://linuxize.com/post/create-a-linux-swap-file/
+
 How much to allocate
 
 If RAM is less than 1 GB, swap size should be at least the size of RAM and at most double the size of RAM
@@ -152,6 +154,8 @@ Need swapfile first
 
 Add resume kernel parameter:
 Edit /etc/default/grub and append your kernel options between the quotes in the GRUB_CMDLINE_LINUX_DEFAULT line:
+
+The value of swap_file_offset can be obtained by running filefrag -v swap_file, the output is in a table format and the required value is located in the first row of the physical_offset column. (4th value from the left, with two dots behind it).
 
 GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet resume=/dev/mapper/arch--lvm-arch resume_offset=80990208"
 
