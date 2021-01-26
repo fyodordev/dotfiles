@@ -541,6 +541,10 @@ add ‘#’ to comment out line to load module
 
 `# load-module module-suspend-on-idle`
 
+### Picom/comptom high CPU usage.
+
+In config switch backend from `glx` to `xrender`.
+
 ### Screen Tearing
 
 Things to try:
