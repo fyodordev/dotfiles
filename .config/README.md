@@ -300,6 +300,11 @@ Setup:
 3. Add folders for each mail account in `~/.cache/mutt/`. In each place a `headers` and a `bodies` folder.
 
 
+### Set xdg-open default applications
+
+Example: `xdg-mime default deluge.desktop x-scheme-handler/magnet`
+List of desktop files in /usr/share/applications.
+
 
 ### Mouse settings
 
