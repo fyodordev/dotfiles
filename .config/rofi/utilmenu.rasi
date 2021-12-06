@@ -42,6 +42,7 @@ window {
 
 /* The currently selected line/element */
 #element selected {
+    border: 1 0 1 0;
     background-color: @color-primary-darker;
 }
 

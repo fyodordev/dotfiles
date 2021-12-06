@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Material Theme Palenight",
+    "workbench.colorTheme": "Community Material Theme Palenight High Contrast",
     "window.menuBarVisibility": "toggle",
     "editor.fontFamily": "Hack",
     "editor.fontSize": 16,
@@ -26,6 +26,5 @@
     "explorer.confirmDragAndDrop": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.detectIndentation": false,
-    "window.zoomLevel": 0,
     "todo-tree.tree.showScanModeButton": false
 }

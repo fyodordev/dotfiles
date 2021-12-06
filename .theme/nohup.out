@@ -1006,3 +1006,381 @@ polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF whi
 polybar|warn:  Termination signal received, shutting down...
 polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
 polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|error: Monitor "DP-3" not found or disconnected
+polybar|error: Monitor "DP-1" not found or disconnected
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+Traceback (most recent call last):
+  File "/home/fyodor/.config/i3/i3scripts/autoname_workspaces.py", line 33, in <module>
+    import i3ipc
+ModuleNotFoundError: No module named 'i3ipc'
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  randr_screen_change_notify (3640x1680)... reloading
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|notice:  Termination signal received, shutting down...
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|notice:  Termination signal received, shutting down...
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Termination signal received, shutting down...
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Termination signal received, shutting down...
+polybar|error: module/i3: Failed to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 9 (Bad file descriptor))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x9: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x8: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Parsing config file: /home/fyodor/.config/polybar/config
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "DINPro:style=Bold:pixelsize=13" (name=DINPro, offset=4, file=/home/fyodor/.local/share/fonts/DIN/DINPro-Bold.otf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|notice:  Loaded font "unifont:fontformat=truetype:size=8:antialias=false" (name=Noto Sans, offset=0, file=/usr/share/fonts/noto/NotoSans-Regular.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Solid:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-solid-900.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Free:style=Regular:pixelsize=12" (name=Font Awesome 5 Free, offset=4, file=/usr/share/fonts/TTF/fa-regular-400.ttf)
+polybar|notice:  Loaded font "Font Awesome 5 Brands:style=Regular:pixelsize=12" (name=Font Awesome 5 Brands, offset=4, file=/usr/share/fonts/TTF/fa-brands-400.ttf)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Unexpected EOF while reading header)
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0xa: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0xa: errno 9 (Bad file descriptor))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0xa: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0xa: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|warn:  module/i3: Attempting to reconnect socket (reason: Failed to read header from socket 0x7: errno 22 (Invalid argument))
+polybar|error: module/i3: Failed to reconnect socket (reason: Failed to connect to i3: errno 2 (No such file or directory))
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...
+polybar|notice:  Termination signal received, shutting down...

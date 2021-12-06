@@ -1,7 +1,6 @@
 @import "colors"
 
 * {
-    power-theme: "powermenu";
 	lines: 12;
 	show-icons: true;
 	separator-style: none;
@@ -9,25 +8,28 @@
 	terminal:                       "kitty";
 	sidebar-mode: true;
 
+    padding: 0;
+	/*padding: 30;*/
 	opacity:                        30;
-	width:                          800;
+	/*width:                          40;*/
 	columns:                        1;
 	font:                           @font-primary;
-
-    /* highlighted text */
-    /* highlight: bold @color-primary;  */
 
 	background-color: rgba(10,0,0,0);
 	text-color: @color-foreground;
 	prompt: "disable";
 	border-color: @color-primary;
+
+	/*!                  'background', 'border';*/
+	/* bw:                             10;*/
 }
 
 window {
     border: 5;
 	padding: 0;
 	background-color: @color-background;
-	opacity: 80;
+	/* opacity: 80; */
+
 }
 
 #prompt {
@@ -46,18 +48,15 @@ window {
 
 /* prompt entry field */
 #entry {
-	padding: 12 10 9 16;
-	/* padding: 16; */
+    enabled: false;
+    padding: 0 0 0 0;
+    height: 0;
+	/* padding: 8;*/
 }
 
 
 /* entry that is active in general (i.e. active window) */
 #element active {
-    color: @color-active;
-}
-
-/* element that is selected and active */
-#element selected active {
     color: @color-active;
 }
 
@@ -67,14 +66,13 @@ window {
 
 #sidebar {
     enabled: true;
-    highlight: #ffffff;
     /*border: 2px 0px 0px 0px;*/
     /*background-color: @lightblack;*/
     padding: 0px;
 }
 
 listview {
-    /*border: 2px solid 0px 2px;*/
+     /* border: 0px solid 0px 0px; */
     padding: 0px 0px 16px 0px;
 }
 
@@ -90,6 +88,7 @@ listview {
     border-color: @foreground;
     color: @color-foreground;
     horizontal-align: 0.1;
+
 }
 
 /* selected sidebar item */
@@ -98,8 +97,9 @@ listview {
     font-weight: 800;
     /*border: 0px 0px 2px 2px;*/
     /* background-color: #444444; */
-    border: 0 0 2 0;
+    border: 0 0 3 0;
     border-color: @color-primary;
+
 }
 
 #vertb {
@@ -109,6 +109,11 @@ listview {
 
 /*
 #inputbar {
+    enabled: false;
+    /* children:   [  ]; */
     children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    height: 0;
+
 }
 */
+

@@ -31,7 +31,8 @@ height = 27
 ;offset-y = 1%
 radius = 0
 fixed-center = false
-monitor = DP-3
+;monitor = DP-1
+monitor = HDMI-0
 ;separator =
 
 
@@ -141,7 +142,7 @@ height = 27
 ;offset-y = 1%
 radius = 0
 fixed-center = true
-monitor = DP-1
+monitor = DP-2
 ;separator =
 
 include-file = /home/fyodor/.config/polybar/theme

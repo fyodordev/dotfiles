@@ -3,5 +3,6 @@
 mydir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )"
 
 ln -snf $mydir/$1 $mydir/active;
+
 $mydir/reload;
 
