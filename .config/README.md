@@ -12,7 +12,20 @@ WiFi: Install packages `dialog` and `wpa_supplicant`
 `genfstab -U /mnt >> /mnt/etc/fstab`
 
 `arch-chroot /mnt`
+
+## Setup display manager
+
+ly
+
+`systemctl enable ly`
+
+Check that the environment variable XAUTHORITY points to `/.Xauthority`
+
  
+## Setup i3
+
+`~/.xinitrc` is entry point
+
 
 ### Locale and language settingsr
 
@@ -50,6 +63,13 @@ Or use `setxkbmap [-model xkb_model] [-layout xkb_layout] [-variant xkb_variant]
 Put command into .xinitrc or .xprofile to set for individual user.
 
 
+## Necessary packages
+
+- `slop`
+- `ffmpeg`
+
+
+
 ## Basic system configuration
 
 Auxiliary necessary installs: 
@@ -66,6 +86,10 @@ Auxiliary necessary installs:
  - `xdg-user-dirs`: Tool to generate and configure default Home folders.
  - `ttf-hack`: The Hack font
  - `strace`
+
+
+### Locking the screen
+
 
 
 ### Using fonts
@@ -265,7 +289,22 @@ Install https://github.com/alexanderjeurissen/ranger_devicons for icons in range
 
 `pacman -S polybar`
 
+
+
+
+### i3 Configuration
+
 Install autoname_workspaces script for i3 to dynamically change icons.
+
+ #### Create i3 configuration
+
+ We will use a config generation script to combine i3 config from different files in `~/.config/i3/config.d/`.
+
+ The script allows the following commands:
+ - `~/.scripts/i3-create-config/create_config`: Generate config
+ - `~/.scripts/i3-create-config/create_config reload`: Reload config
+ - `~/.scripts/i3-create-config/create_config restart`: Restart i3
+ 
 
 ### Setup snap packages
 
@@ -303,6 +342,7 @@ Setup:
 ### Set xdg-open default applications
 
 Example: `xdg-mime default deluge.desktop x-scheme-handler/magnet`
+This command should add the corresponding setting to `~/.config/mimeapps.list`
 List of desktop files in /usr/share/applications.
 
 
@@ -316,20 +356,23 @@ https://docs.fedoraproject.org/en-US/Fedora/18/html/System_Administrators_Guide/
 
 List xinput devices:
 `xinput list`
-`xinput list-props <id>` with <id> being id of the device from xinput list.
+`xinput list-props <id>` with `<id>` being id of the device from xinput list.
 Of these props `libinput Accel Speed` pertains to mouse acceleration (between -1 and 1, -1 for no acceleration) and `Coordinate Transformation Matrix` pertains to mouse speed.
 
-"xinput set-prop <mouse id> <prop id> <sensitivity> 0 0 0 <sensitivity> 0 0 0 1 where <sensitivity> is your sensitivity multiplier e.g. if I wanted to halve the speed I'd use 0.5."
+"`xinput set-prop <mouse id> <prop id> <sensitivity> 0 0 0 <sensitivity> 0 0 0 1` where `<sensitivity>` is your sensitivity multiplier e.g. if I wanted to halve the speed I'd use 0.5."
 
 Example how to set property:
+
 ```
 xinput --set-prop <device id> 'libinput Accel Profile Enabled' 0, 1
 xinput --set-prop <device id> <prop id> 0, 1 # Where <prop id> is id of the property which is displayed in brackets when using list-props.
 ```
 
 Set in xorg conf:
+```
 Option "TransformationMatrix" "0.36 0 0.64 0 1 0 0 0 1"
 Option "AccelSpeed" "0"
+```
 
 For mouse at 1800 dpi set libinput accel to 0 and speed to 0.5
 
@@ -354,7 +397,7 @@ Note down the name (e.g. 'Logitech USB Optical Mouse'). This name has to be spli
 Run `gpg2 --full-gen-key` to generate GPG key. Make sure the passphrase matches your login password.
 
 *Add a subkey for use as SSH replacement*
-Run `gpg2 --expert --edit-key <KEY ID>` where <KEY ID> is the id of the key you just generated.
+Run `gpg2 --expert --edit-key <KEY ID>` where `<KEY ID>` is the id of the key you just generated.
 Input `addkey` and select `RSA (set your own capabilities)`.
 Toggle capabilities so that only the Authenticate capability remains. Finish by entering `q`.
 
@@ -385,7 +428,21 @@ auth     optional  pam_gnupg.so
 session  optional  pam_gnupg.so
 ```
 
-`~/.gnupg/gpg.conf`. <KEY-ID> is the main GPG key (not the subkey):
+Possibly the following:
+```
+auth        include     system-login
+-auth       optional    pam_gnome_keyring.so
+account     include     system-login
+password    include     system-login
+session     include     system-login
+-session    optional    pam_gnome_keyring.so auto_start
+
+auth     optional  pam_gnupg.so
+session  optional  pam_gnupg.so
+```
+
+
+`~/.gnupg/gpg.conf`. `<KEY-ID>` is the main GPG key (not the subkey):
 ```
 default-key <KEY-ID>
 use-agent
@@ -434,7 +491,8 @@ PasswordAuthentication no
 X11Forwarding no
 ```
 
-# More secure algorithm keys and ciphers only
+More secure algorithm keys and ciphers only:
+
 ```
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
@@ -663,3 +721,51 @@ In the i3 config have a line like `for_window [class="custom-floating"] floating
 Most applications support setting a custom window classing using "--class".
 So for instance to launch floating terminal use `kitty --class custom-floating`
 
+
+
+
+# Setup proper python environment
+https://github.com/pyenv/pyenv#advanced-configuration
+
+
+# Disable PC Speaker
+
+[Disable PC Speaker](https://wiki.archlinux.org/title/PC_speaker#Disable_PC_Speaker)
+
+
+# Google drive mount
+
+Install `google-drive-ocamlfuse` and follow [these instructions](https://www.xmodulo.com/mount-google-drive-linux.html)
+
+
+# Obsidian Notes
+
+symlink the '.obsidian' directory in the working directory to ~/.config/obsidian to make themes work properly.
+
+
+
+# Configuring LF
+
+
+## Setting Icons
+
+in .config/lf/lfrc: `set icons true`
+in .bashrc or .profile: 
+
+```
+export LF_ICONS="\
+tw=:st=:ow=:dt=:di=:fi=:ln=:or=:ex=:*.c=:*.cc=:*.clj=:*.coffee=:*.cpp=:*.css=:*.d=:*.dart=:*.erl=:*.exs=:*.fs=:*.go=:*.h=:*.hh=:*.hpp=:*.hs=:*.html=:*.java=:*.jl=:*.js=:*.json=:*.lua=:*.md=:*.php=:*.pl=:*.pro=:*.py=:*.rb=:*.rs=:*.scala=:*.ts=:*.vim=:*.cmd=:*.ps1=:*.sh=:*.bash=:*.zsh=:*.fish=:*.tar=:*.tgz=:*.arc=:*.arj=:*.taz=:*.lha=:*.lz4=:*.lzh=:*.lzma=:*.tlz=:*.txz=:*.tzo=:*.t7z=:*.zip=:*.z=:*.dz=:*.gz=:*.lrz=:*.lz=:*.lzo=:*.xz=:*.zst=:*.tzst=:*.bz2=:*.bz=:*.tbz=:*.tbz2=:*.tz=:*.deb=:*.rpm=:*.jar=:*.war=:*.ear=:*.sar=:*.rar=:*.alz=:*.ace=:*.zoo=:*.cpio=:*.7z=:*.rz=:*.cab=:*.wim=:*.swm=:*.dwm=:*.esd=:*.jpg=:*.jpeg=:*.mjpg=:*.mjpeg=:*.gif=:*.bmp=:*.pbm=:*.pgm=:*.ppm=:*.tga=:*.xbm=:*.xpm=:*.tif=:*.tiff=:*.png=:*.svg=:*.svgz=:*.mng=:*.pcx=:*.mov=:*.mpg=:*.mpeg=:*.m2v=:*.mkv=:*.webm=:*.ogm=:*.mp4=:*.m4v=:*.mp4v=:*.vob=:*.qt=:*.nuv=:*.wmv=:*.asf=:*.rm=:*.rmvb=:*.flc=:*.avi=:*.fli=:*.flv=:*.gl=:*.dl=:*.xcf=:*.xwd=:*.yuv=:*.cgm=:*.emf=:*.ogv=:*.ogx=:*.aac=:*.au=:*.flac=:*.m4a=:*.mid=:*.midi=:*.mka=:*.mp3=:*.mpc=:*.ogg=:*.ra=:*.wav=:*.oga=:*.opus=:*.spx=:*.xspf=:*.pdf=:*.nix=:"
+```
+
+
+Reference:
+
+https://github.com/gokcehan/lf/wiki/Icons
+https://www.youtube.com/watch?v=HHjQFlzR2gw
+
+
+## Enabling image previews
+
+1. Install Überzug from pacman repo:
+	https://github.com/seebye/ueberzug
+2. Install and use following script and suggested dependencies: https://github.com/cirala/lfimg

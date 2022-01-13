@@ -1,4 +1,7 @@
 #!/bin/bash
+# Requirements:
+#   - slop
+#   - ffmpeg
 TMPFILE="$(mktemp -t screencast-XXXXXXX).mkv"
 echo "Tempfile is: "$TMPFILE
 OUTPUT="$HOME/Pictures/Screencasts/$(date +%F-%H-%M-%S)"

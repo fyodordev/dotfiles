@@ -1,8 +1,8 @@
 #!/bin/fish
 
 # Terminal colors
-set foreground    F9F5ED
-set background    0d1926
+set foreground    05D9E8
+set background    01012B
 
 set grey_darkest  1C252E
 set grey_dark     4A535C 

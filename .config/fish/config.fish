@@ -45,11 +45,13 @@ set fish_greeting
 alias dfgit='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
 alias vi='/usr/bin/nvim'
 alias sxiv='sxiv -b'
-alias r='ranger'
 alias m='neomutt'
+alias r='ranger'
 alias c='code .'
 alias q='exit'
 alias cli='xclip -sel clip'
+alias r='ranger'
+alias f='lfrun'
 
 
 pyenv init - | source

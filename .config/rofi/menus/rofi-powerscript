@@ -2,29 +2,38 @@
 
 
 # options to be displayed
-option0="hibernate"
-option1="reboot"
-option2="shutdown"
-option3="logout"
+option_hibernate="hibernate"
+option_reboot="reboot"
+option_shutdown="shutdown"
+option_logout="logout"
+option_lock="lock"
 
 if [ -z $@ ]
 then
     # Script gets called to get list of options.
-    options="$option0\n$option1\n$option2\n$option3"
+    options="\
+$option_hibernate\n\
+$option_reboot\n\
+$option_shutdown\n\
+$option_logout\n\
+$option_lock\n"
+
     printf $options;
 else
     # Script gets called with chosen option. 
     chosen=$@;
     case $chosen in
-        $option0)
+        $option_hibernate)
             #nohup kitty zsh -c 'echo "blah"; exec zsh' &> /dev/null & disown;;  #zsh -c 'echo "test"'
             systemctl hibernate;;
-        $option1)
+        $option_reboot)
             reboot;;
-        $option2)
+        $option_shutdown)
             shutdown -h now;;
-        $option3)
+        $option_logout)
             #nohup kitty zsh -c 'echo "blah"; exec zsh' &> /dev/null & disown;;  #zsh -c 'echo "test"'
-            pkill -KILL -u $(whoami);;
+            sudo systemctl restart ly;;
+        $option_lock)
+            slock &> /dev/null & disown;;
     esac
 fi
