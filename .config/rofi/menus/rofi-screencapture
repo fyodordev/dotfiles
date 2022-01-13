@@ -1,0 +1,31 @@
+#!/bin/bash
+
+
+# options to be displayed
+option0="Screenshot Area"
+option1="Screenshot Area HQ"
+option2="Screenshot Full"
+option3="Screenshot Full HQ"
+option4="Screencapture to GIF"
+
+if [ -z $@ ]
+then
+    # Script gets called to get list of options.
+    options="$option0\n$option1\n$option2\n$option3\n$option4"
+    echo -e $options;
+else
+    # Script gets called with chosen option. 
+    chosen=$@;
+    case $chosen in
+        $option0)
+            $HOME/.scripts/screenshot_area_rofi &> /dev/null & disown;;
+        $option1)
+            $HOME/.scripts/screenshot_area_hq_rofi &> /dev/null & disown;;
+        $option2)
+            $HOME/.scripts/screenshot_full_rofi &> /dev/null & disown;;
+        $option3)
+            $HOME/.scripts/screenshot_full_hq_rofi &> /dev/null & disown;;
+        $option4)
+            $HOME/.scripts/capture-gif &> /dev/null & disown;;
+    esac
+fi

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+# options to be displayed
+option0="Standard"
+option1="Dark"
+
+if [ -z $@ ]
+then
+    # Script gets called to get list of options.
+    options="$option0\n$option1"
+    printf $options;
+else
+    # Script gets called with chosen option. 
+    chosen=$@;
+    case $chosen in
+        $option0)
+            #nohup kitty zsh -c 'echo "blah"; exec zsh' &> /dev/null & disown;;  #zsh -c 'echo "test"'
+            ~/.theme/switch-theme standard &>/dev/null & disown;;
+        $option1)
+            ~/.theme/switch-theme dark &>/dev/null & disown;;
+    esac
+fi
