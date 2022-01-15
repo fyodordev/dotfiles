@@ -1,0 +1,18 @@
+[Added Associations]
+application/x-java-jnlp-file=javaws.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-UX0FW0.desktop;
+application/pdf=org.pwmt.zathura.desktop;
+
+[Default Applications]
+x-scheme-handler/msteams=teams.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-UX0FW0.desktop
+text/plain=nvim.desktop
+application/json=nvim.desktop
+text/x-shellscript=nvim.desktop
+inode/x-empty=nvim.desktop
+text/html=nvim.desktop
+video/x-matroska=mpv.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=sxiv.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
