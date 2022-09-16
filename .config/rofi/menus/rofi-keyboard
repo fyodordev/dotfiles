@@ -15,8 +15,8 @@ else
     chosen=$@;
     case $chosen in
         $option0)
-            setxkbmap -variant altgr-intl;;
+            setxkbmap -layout us -variant altgr-intl;;
         $option1)
-            setxkbmap -variant rus;;
+            setxkbmap -layout ru;;
     esac
 fi

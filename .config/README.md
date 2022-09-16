@@ -49,10 +49,10 @@ Put either in following format into an xorg conf file `00-keyboard.conf`:
 Section "InputClass"
         Identifier "system-keyboard"
         MatchIsKeyboard "on"
-        Option "XkbLayout" "cz,us"
-        Option "XkbModel" "pc104"
-        Option "XkbVariant" ",dvorak"
-        Option "XkbOptions" "grp:alt_shift_toggle"
+        Option "XkbLayout" "us"
+        Option "XkbModel" "pc105"
+        Option "XkbVariant" "altgr-intl"
+        Option "XkbOptions" "nodeadkeys,caps:ctrl_modifier"
 EndSection
 ```
 
@@ -61,6 +61,10 @@ Or use localectl which regenerates the 00-keyboard.conf file on every startup.
 
 Or use `setxkbmap [-model xkb_model] [-layout xkb_layout] [-variant xkb_variant] [-option xkb_options]` to set via command.
 Put command into .xinitrc or .xprofile to set for individual user.
+
+
+
+
 
 
 ## Necessary packages
@@ -93,7 +97,6 @@ Auxiliary necessary installs:
 
 
 ### Using fonts
-
 
 To view font glyphs, install xorg-xfd.
 Then run `fc-list` to view all available fonts 
