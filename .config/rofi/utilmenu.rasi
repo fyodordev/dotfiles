@@ -78,6 +78,7 @@ listview {
 }
 
 /* sidebar item */
+/*
 #button {
     font: @font-secondary;
     margin: 8;
@@ -91,6 +92,7 @@ listview {
     horizontal-align: 0.1;
 
 }
+*/
 
 /* selected sidebar item */
 #button selected normal {
