@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Reload i3
-~/.scripts/i3-create-config/create_config;
 # Restart i3
 i3-msg "restart" > /dev/null;
 # Restart various programs and services.
