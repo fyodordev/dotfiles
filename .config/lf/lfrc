@@ -53,15 +53,15 @@ cmd trash %{{
 }}
 map x trash
 
+map . $nohup $($TERM) --directory $PWD &>/dev/null & disown
+
 # TODO: Map escape key to escape in currently selected dir: it's w
 
 # Free keys:
 # t
 # o
-# a
 # [, ], -, =, .
 # /
-# b,
 # Esc
 # Tab
 # Backspace

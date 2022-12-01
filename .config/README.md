@@ -1,18 +1,6 @@
 # Arch Install Readme
 
 
-## Install System from live ISO
-
-`pacstrap /mnt base base-devel linux linux-firmware neovim lvm2 man-db man-pages sudo dhclient`
-
-Also add `intel-ucode` or `amd-ucode` depending on your processor 
-
-WiFi: Install packages `dialog` and `wpa_supplicant`
-
-`genfstab -U /mnt >> /mnt/etc/fstab`
-
-`arch-chroot /mnt`
-
 ## Setup display manager
 
 ly
@@ -108,10 +96,6 @@ Take the last 4 hex digits of the code and put them into following command:
 
 `echo -ne "\ue048" | xclip -selection clipboard`
 This copies the glyph to your keyboardll (Doesn't work in fish for some reason)
-
-### Bootstrap yay install
-
-`git clone https://aur.archlinux.org/yay.git && cd yay && makepkg –si && ./pkg/yay/usr/bin/yay -S yay --nodiffmenu && cd .. && rm -rf yay && yay -save --nodiffmenu`
 
 ### Shell setup
 
@@ -541,7 +525,7 @@ in /etc/mkinitcpio.conf add btrfs to the end of the HOOKS parameters.
 
 Setting permissions for the whole drive after copying from NTFS:
 user fyodor, group users, rw-rw-rw
-`
+
 sudo chown -R fyodor:users /data
 sudo chmod -R 666 /data
 
@@ -558,7 +542,7 @@ http://marc.merlins.org/perso/btrfs/post_2014-03-19_Btrfs-Tips_-Btrfs-Scrub-and-
 (Regenerate initramfs using `mkinitcpio -p linux`)
 
 
-## System upgrades
+
 
 1. Make an LVM snapshot:
 
@@ -680,6 +664,11 @@ Check xorg keyboard settings:
 setxkbmap -print -verbose 10
 ```
 
+
+
+
+
+
 ## Btrfs filesystem doesnt mount
 
 If dmesg error log when mount shows:
@@ -734,6 +723,10 @@ https://github.com/pyenv/pyenv#advanced-configuration
 # Disable PC Speaker
 
 [Disable PC Speaker](https://wiki.archlinux.org/title/PC_speaker#Disable_PC_Speaker)
+
+
+
+
 
 
 # Google drive mount

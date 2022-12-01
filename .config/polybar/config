@@ -77,6 +77,10 @@ modules-center = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+;override-redirect = true
+;wm-restack = i3
+
+
 
 [bar/top2]
 
@@ -121,9 +125,6 @@ modules-center = i3
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
-
-;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -133,6 +134,10 @@ modules-center = i3
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;override-redirect = true
+;wm-restack = i3
+
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -186,6 +191,10 @@ modules-right = eth filesystem memory
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+;override-redirect = true
+;wm-restack = i3
+
 
 [module/vpnstatus]
 type = custom/script
@@ -241,6 +250,7 @@ fuzzy-match=true
 
 ;ws-icon-1 = chromium;
 
+font = 3
 ; focused = Active workspace on focused monitor
 ;label-focused-font = 2
 label-focused = %name%

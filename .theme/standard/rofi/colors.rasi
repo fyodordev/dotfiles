@@ -3,7 +3,7 @@
     color-foreground: #dddddd;
 
     /* background color */
-    color-background: #000000aa;
+    color-background: #00000080;
 
     /* border color */
     color-primary: #7cc7f2;

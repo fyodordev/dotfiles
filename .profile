@@ -3,6 +3,7 @@ export PYSPARK_PYTHON=python3
 export PATH="\
 $PATH:\
 $HOME/.scripts:\
+$(pyenv root):\
 /var/lib/snapd/snap/bin:\
 /snap/bin:\
 $HOME/.local/bin:\
@@ -10,6 +11,7 @@ $HOME/.local/bin:\
 /opt/apache-spark/python"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
+export TERM='alacritty'
 
 # Aliases for better cli UX
 alias dfgit='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
@@ -22,6 +24,9 @@ alias q='exit'
 alias cli='xclip -sel clip'
 alias r='ranger'
 alias f='lfrun'
+
+alias ls='ls --color=auto'
+
 
 # Setup variables
 export EDITOR=/usr/bin/nvim
