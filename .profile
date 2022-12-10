@@ -15,6 +15,7 @@ export TERM='alacritty'
 
 # Aliases for better cli UX
 alias dfgit='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'
 alias vi='/usr/bin/nvim'
 alias sxiv='sxiv -b'
 alias m='neomutt'
