@@ -2,7 +2,7 @@
 Description=Auto rename i3 workspaces to show icons for running programs.
 PartOf=default.target
 
-StartLimitIntervalSec=500
+StartLimitIntervalSec=60
 StartLimitBurst=5
 
 [Service]

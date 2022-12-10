@@ -1,7 +1,0 @@
-; Fonts
-
-font-0 = DINPro:style=Bold:pixelsize=13;4
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = FontAwesome:style=Solid:pixelsize=12;4
-font-3 = Font Awesome 5 Brands:style=Regular:pixelsize=12;4
-

@@ -1,7 +1,7 @@
 #!/bin/fish
 
 fenv source ~/.profile
-source ~/.config/fish/colors.fish
+#source ~/.config/fish/colors.fish
 
 # Set the cursor shapes for the different vi modes.
 # Doesn't work for some reason.
@@ -44,6 +44,7 @@ set fish_greeting
 
 
 alias dfgit='/usr/bin/git --git-dir=$HOME/.dotfiles-repo/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/'
 alias vi='/usr/bin/nvim'
 alias sxiv='sxiv -b'
 alias m='neomutt'
