@@ -1,0 +1,28 @@
+#!/bin/bash
+
+
+# options to be displayed
+option0="System Upgrade"
+option1="Clear trash until 2 weeks ago"
+option2="Clear all trash"
+option3="Reload i3 config"
+
+if [ -z $@ ]
+then
+    # Script gets called to get list of options.
+    options="$option0\n$option1\n$option2\n$option3"
+    echo -e $options;
+else
+    # Script gets called with chosen option. 
+    chosen=$@;
+    case $chosen in
+        $option0)
+            kitty fish -c 'system-upgrade; fish' &>/dev/null & disown;;
+        $option1)
+            kitty fish -c 'trash-empty 14; fish' &>/dev/null & disown;;
+        $option2)
+            kitty fish -c 'trash-empty; fish' &>/dev/null & disown;;
+        $option3)
+            $HOME/.scripts/i3-create-config/create_config restart &> /dev/null & disown;;
+    esac
+fi

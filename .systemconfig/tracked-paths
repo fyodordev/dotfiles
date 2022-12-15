@@ -1,0 +1,8 @@
+/etc/fstab
+/etc/vconsole.conf
+/etc/mkinitcpio.conf
+/etc/locale.conf
+/etc/mkinitcpio.conf
+/etc/systemd
+/etc/sway
+/usr/local/share/kbd/keymaps/personal.map

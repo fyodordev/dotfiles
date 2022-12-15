@@ -1,0 +1,14 @@
+[Unit]
+Description=FUSE filesystem over Google Drive
+After=network.target
+
+[Service]
+User=fyodor
+Group=fyodor
+ExecStart=google-drive-ocamlfuse /home/fyodor/.googledrive
+ExecStop=fusermount -u {mountpoint}
+Restart=always
+Type=forking
+
+[Install]
+WantedBy=multi-user.target

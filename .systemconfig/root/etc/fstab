@@ -1,0 +1,13 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/mapper/vg0-root
+UUID=38d0a84a-1a58-4224-a0c2-53b4832b67d2	/         	ext4      	rw,relatime	0 1
+
+# /dev/mapper/vg0-swap
+UUID=d04432c9-10b2-424d-a2ba-9612e83f82e9 none swap defaults 0 0
+
+# /dev/sda1
+UUID=9F18-E298      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
+

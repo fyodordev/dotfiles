@@ -1,0 +1,11 @@
+[Unit]
+Description=Swayest workstyle - Auto rename sway workspaces with icon font based on currently running workspace applications.
+Documentation=https://github.com/Alexays/Waybar/wiki/
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sworkstyle
+
+[Install]
+WantedBy=sway-session.target
