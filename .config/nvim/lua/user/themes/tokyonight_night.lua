@@ -11,5 +11,5 @@ return function()
 
   -- Load the colorscheme
   vim.cmd[[colorscheme default]]
-  vim.cmd[[colorscheme tokyonight]]
+  vim.cmd[[colorscheme tokyonight-night]]
 end

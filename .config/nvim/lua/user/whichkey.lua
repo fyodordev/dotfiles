@@ -168,6 +168,7 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    e = { "<cmd>Telescope diagnostics<cr>", "Show diagnostics items." },
   },
   s = {
     name = "Search",

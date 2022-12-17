@@ -3,8 +3,12 @@ require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
 require "user.cmp"
-require "user.lsp"
 require "user.telescope"
+require "user.lsp"
+require("user.dap").setup()
+-- require "dap-install"
+-- require("rust-tools").setup({})
+
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
@@ -24,5 +28,7 @@ require "user.lightbulb"
 require "user.todo-comments"
 require "user.neoscroll"
 
-require("user.themes.tokyonight_night")()
+require("user.themes.loader")
+require("user.themes.onedark-deep")
+-- require('tokyonight.extra').setup()
 

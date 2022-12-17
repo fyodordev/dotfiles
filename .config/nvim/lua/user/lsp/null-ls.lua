@@ -1,3 +1,5 @@
+-- null ls can be used to add non-lsp sources to be used by the lsp client.
+
 local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 if not null_ls_status_ok then
 	return

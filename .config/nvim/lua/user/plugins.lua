@@ -60,14 +60,17 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
+  use 'navarasu/onedark.nvim'
   use "folke/tokyonight.nvim"
   use "rebelot/kanagawa.nvim"
   use "EdenEast/nightfox.nvim"
+  -- use "sainnhe/everforest"
   use "projekt0n/github-nvim-theme"
-  use 'marko-cerovac/material.nvim'
-  --use 'yashguptaz/calvera-dark.nvim'
-  use 'tiagovla/tokyodark.nvim'
-  use { "mangeshrex/everblush.vim" }
+  use "marko-cerovac/material.nvim"
+  use 'yashguptaz/calvera-dark.nvim'
+  use "tiagovla/tokyodark.nvim"
+  use "Everblush/nvim"
+  -- use { "mangeshrex/everblush.vim" }
   use 'shaunsingh/moonlight.nvim'
   use "yonlu/omni.vim"
   use {'nxvu699134/vn-night.nvim'}
@@ -92,6 +95,8 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
+  -- TODO: Fix order of lspconfig, lsp-installer plugins
+  --    As described here: https://github.com/williamboman/nvim-lsp-installer
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
@@ -110,6 +115,10 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+
+  use 'renerocksai/calendar-vim'
+  use 'renerocksai/telekasten.nvim'
+
   -- Git
   use "lewis6991/gitsigns.nvim"
 
@@ -118,6 +127,39 @@ return packer.startup(function(use)
     "folke/todo-comments.nvim",
     requires = "nvim-lua/plenary.nvim",
   }
+
+  -- Debugging and better language integrations.
+  use {'mfussenegger/nvim-dap-python'}
+  use "simrat39/rust-tools.nvim"
+  use {'nvim-telescope/telescope-dap.nvim'}
+  use { "Pocco81/dap-buddy.nvim", branch = 'dev'}
+  use {'theHamsta/nvim-dap-virtual-text'}
+  use {'rcarriga/nvim-dap-ui'}
+  use { 'mfussenegger/nvim-dap' }
+
+
+  use 'gpanders/editorconfig.nvim'
+  -- use {
+  --   'mfussenegger/nvim-dap',
+  --   opt = true,
+  --   event = "BufReadPre",
+  --   module = { "dap" },
+  --   wants = {
+  --     "nvim-dap-virtual-text",
+  --     "nvim-dap-ui",
+  --     "nvim-dap-python",
+  --     "which-key.nvim"
+  --   },
+  --   requires = {
+  --     "theHamsta/nvim-dap-virtual-text",
+  --     "rcarriga/nvim-dap-ui",
+  --     "mfussenegger/nvim-dap-python",
+  --     "nvim-telescope/telescope-dap.nvim",
+  --   },
+  --   config = function()
+  --     require("user.dap").setup()
+  --   end,
+  -- }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
