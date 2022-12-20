@@ -7,3 +7,4 @@
 /etc/systemd
 /etc/sway
 /usr/local/share/kbd/keymaps/personal.map
+/usr/share/wayland-sessions/sway.desktop
