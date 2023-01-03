@@ -1,0 +1,4 @@
+#!/bin/bash
+
+swaymsg [workspace='300'] move to workspace current
+
