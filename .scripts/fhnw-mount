@@ -1,6 +1,0 @@
-#!/bin/bash
-
-pw=$(kdialog --password "Enter password for FHNW VPN: ")
-
-# Mount filesystem
-sudo mount -t cifs -o username='fedorpavlovitch.perejoguine@students.fhnw.ch',password=$pw,mfsymlinks //fs.edu.ds.fhnw.ch/data /mnt/fhnw_ad

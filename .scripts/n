@@ -1,2 +1,0 @@
-#!/bin/bash
-nohup kitty --directory $PWD &>/dev/null & disown

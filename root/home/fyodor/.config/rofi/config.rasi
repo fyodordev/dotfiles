@@ -1,0 +1,119 @@
+@import "colors"
+
+* {
+	lines: 12;
+	show-icons: true;
+	separator-style: none;
+	hide-scrollbar: true;
+	terminal:                       "kitty";
+	sidebar-mode: true;
+
+    padding: 0;
+	/*padding: 30;*/
+	opacity:                        30;
+	/*width:                          40;*/
+	columns:                        1;
+	font:                           @font-primary;
+
+	background-color: rgba(10,0,0,0);
+	text-color: @color-foreground;
+	prompt: "disable";
+	border-color: @color-primary;
+
+	/*!                  'background', 'border';*/
+	/* bw:                             10;*/
+}
+
+window {
+    border: 5;
+	padding: 0;
+	background-color: @color-background;
+	/* opacity: 80; */
+
+}
+
+#prompt {
+    enabled: false;
+}
+
+#element {
+	padding: 7 10 9 16;
+}
+
+/* The currently selected line/element */
+#element selected {
+    border: 1 0 1 0;
+    background-color: @color-primary-darker;
+}
+
+/* prompt entry field */
+#entry {
+    enabled: false;
+    padding: 0 0 0 0;
+    height: 0;
+	/* padding: 8;*/
+}
+
+
+/* entry that is active in general (i.e. active window) */
+#element active {
+    color: @color-active;
+}
+
+#element selected urgent {
+    color: @color-urgent;
+}
+
+#sidebar {
+    enabled: true;
+    /*border: 2px 0px 0px 0px;*/
+    /*background-color: @lightblack;*/
+    padding: 0px;
+}
+
+listview {
+     /* border: 0px solid 0px 0px; */
+    padding: 0px 0px 16px 0px;
+}
+
+/* sidebar item */
+#button {
+    font: @font-secondary;
+    margin: 8;
+    padding: 2px;
+    border: 0 0 0 0;
+    /*border: 2px 0px 2px 2px;*/
+    /*border-radius: 4px 0px 0px 4px;*/
+    background-color: @tlightblack;
+    border-color: @foreground;
+    color: @color-foreground;
+    horizontal-align: 0.1;
+
+}
+
+/* selected sidebar item */
+#button selected normal {
+    color: @color-active;
+    font-weight: 800;
+    /*border: 0px 0px 2px 2px;*/
+    /* background-color: #444444; */
+    border: 0 0 3 0;
+    border-color: @color-primary;
+
+}
+
+#vertb {
+    expand: false;
+    children: [ dummy0, sidebar, dummy1 ];
+}
+
+/*
+#inputbar {
+    enabled: false;
+    /* children:   [  ]; */
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    height: 0;
+
+}
+*/
+

@@ -1,0 +1,17 @@
+/etc/fstab
+/etc/vconsole.conf
+/etc/mkinitcpio.conf
+/etc/locale.conf
+/etc/mkinitcpio.conf
+/etc/gdm/custom.conf
+/etc/systemd
+/etc/sway
+/etc/plymouth
+/etc/pam.d/sway-autologin
+/boot/EFI/refind/refind.conf
+/boot/EFI/refind/icons
+/boot/EFI/refind/themes
+/usr/local/share/kbd/keymaps/personal.map
+/usr/share/wayland-sessions/sway.desktop
+/home/fyodor/.theme
+/home/fyodor/.config

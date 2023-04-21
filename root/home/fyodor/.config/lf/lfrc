@@ -1,0 +1,76 @@
+#cmd open $xdg-open "$f"
+
+set ratios 1:2:3
+set filesep "\n"
+set ifs "\n"
+set icons true
+map <delete> delete
+map l open
+map - shell
+map = shell-pipe
+
+set previewer ~/.config/lf/preview
+set cleaner ~/.config/lf/cleaner
+
+cmd copydirect %{{
+    xclip -selection clipboard -t $(xdg-mime query filetype "$f") -i "$f" &> /dev/null &
+    echo "Copied file to clipboard.";
+}}
+map b copydirect
+
+cmd open ${{    
+    # Test whether file is a symlink
+    # If yes follow the symlink and
+    # read the actual path.
+    test -L $f && f=$(readlink -f $f)
+    IFS=$'\n';
+
+    case $(file --mime-type $f -b) in
+        text/*)
+            nvim -p $fx
+            ;;
+        *)
+            for f in $fx;
+                do
+                    nohup xdg-open "$f" &> /dev/null & disown
+                done
+            ;;
+    esac
+}}
+
+
+cmd cpydir $echo -n "$f" | xclip -selection clipboard
+map a cpydir
+
+cmd trash %{{
+    IFS=$'\n';
+    count=0;
+    for f in $fx; do
+        trash-put "$f";
+        (( count++ ));
+    done
+    echo "Moved ${count} files to trash.";
+}}
+map x trash
+
+map . $ nohup $($TERM --working-directory $PWD) &>/dev/null && disown
+
+# TODO: Map escape key to escape in currently selected dir: it's w
+
+# Free keys:
+# t
+# o
+# [, ], -, =, .
+# /
+# Esc
+# Tab
+# Backspace
+
+
+# TODO: Map key to center selection (zz equivalent)
+
+# TODO: Map key to copy filename, or batch copy filenames
+# TODO: same with filepaths
+
+# Implement trashcan, for key x
+

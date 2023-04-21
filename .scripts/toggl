@@ -1,2 +1,0 @@
-#!/bin/bash
-chromium --app='https://toggl.com/app/timer'

@@ -1,0 +1,14 @@
+[Unit]
+Description=Auto rename i3 workspaces to show icons for running programs.
+PartOf=default.target
+
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Restart=always
+RestartSec=3s
+ExecStart=/home/fyodor/.config/i3/i3scripts/autoname_workspaces.py
+
+[Install]
+WantedBy=default.target

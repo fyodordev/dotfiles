@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get working directory (themes)
+mydir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )"
+# Link theme directory to active
+ln -snf $mydir/themes/$1 $mydir/active;
+feh --bg-fill --no-xinerama ~/.theme/active/wallpaper.jpg;
+
+# Write name of theme into a file that is monitored by neovim.
+nvim_theme=$(cat $mydir/active/theme_name)
+echo "$nvim_theme" > $mydir/active-writeables/neovim_theme
+
+# Write alacritty into 
+alacritty_config=$(cat $mydir/active/alacritty/alacritty.yml)
+echo "$alacritty_config" > $mydir/active-writeables/alacritty.yml
+
+# $mydir/reload;

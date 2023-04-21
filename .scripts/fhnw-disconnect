@@ -1,6 +1,0 @@
-#!/bin/bash
-echo "Starting to disconnect";
-sudo umount -l /mnt/fhnw_ad;
-echo "unmounted";
-sudo pkill -f openconnect;
-

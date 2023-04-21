@@ -1,2 +1,0 @@
-#!/bin/bash
-chromium --app='https://www.onenote.com/notebooks?auth=1'
