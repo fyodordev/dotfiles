@@ -2,7 +2,6 @@ alacritty
 alsa-utils
 autoconf
 automake
-awesome-terminal-fonts
 base
 base-devel
 bat
@@ -25,11 +24,13 @@ fish
 flatpak
 flex
 foot
+gammastep
 gcc
 gdm
 git
 glfw-wayland
 gnu-efi
+gnu-free-fonts
 gphoto2
 grim
 groff
@@ -70,6 +71,7 @@ pavucontrol
 pipewire-alsa
 pipewire-pulse
 pkgconf
+plymouth
 poppler
 powertop
 pulsemixer
@@ -90,8 +92,8 @@ sxiv
 telegram-desktop
 terminus-font
 texinfo
-ttf-font-awesome
 ttf-hack
+ttf-inconsolata
 upower
 usbutils
 waybar

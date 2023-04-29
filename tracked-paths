@@ -8,6 +8,7 @@
 /etc/sway
 /etc/plymouth
 /etc/pam.d/sway-autologin
+/etc/pipewire
 /boot/EFI/refind/refind.conf
 /boot/EFI/refind/icons
 /boot/EFI/refind/themes
