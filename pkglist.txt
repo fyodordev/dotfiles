@@ -76,6 +76,7 @@ poppler
 powertop
 pulsemixer
 python-pip
+qbittorrent
 qpwgraph
 qt5-wayland
 rclone
