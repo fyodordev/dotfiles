@@ -2,7 +2,11 @@
 bass source ~/.profile
 
 
+
+
 set -Ux LF_ICONS 
+
+
 export LF_ICONS="\
 tw=:\
 st=:\
@@ -172,6 +176,8 @@ if status is-interactive
 end
 
 fish_vi_key_bindings
+
+set -U fish_greeting
 
 set fish_cursor_default     block      blink
 set fish_cursor_insert      underscore blink
