@@ -58,6 +58,10 @@ neovim
 networkmanager
 nmap
 nodejs
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
 npm
 nvidia-dkms
 nvidia-settings
@@ -95,7 +99,6 @@ terminus-font
 texinfo
 ttf-hack
 ttf-inconsolata
-ttf-nerd-fonts-symbols-2048-em
 upower
 usbutils
 waybar
