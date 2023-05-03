@@ -1,3 +1,5 @@
+adobe-source-sans-fonts
+adobe-source-serif-fonts
 alacritty
 alsa-utils
 autoconf
