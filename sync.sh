@@ -5,7 +5,7 @@ SCRIPT=$(readlink -f "$0")
 # Absolute path this script is in, thus /home/user/bin
 SCRIPTPATH=$(dirname "$SCRIPT")
 #echo $SCRIPTPATH
-pacman -Qqen > $SCRIPTPATH/pkglist.txt;
+pacman -Qqe > $SCRIPTPATH/pkglist.txt;
 
 # For some reason with files-from, the --recursive (-r) option is no longer implied with -a
 # so we have to add it again.
