@@ -11,6 +11,7 @@ bison
 chafa
 chromium
 darktable
+ddcutil
 debugedit
 discord
 dkms
@@ -37,6 +38,7 @@ gphoto2
 grim
 groff
 htop
+i2c-tools
 intel-ucode
 kitty
 lazygit

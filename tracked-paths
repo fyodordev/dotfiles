@@ -1,3 +1,7 @@
+/boot/EFI/refind/refind.conf
+/boot/EFI/refind/icons
+/boot/EFI/refind/themes
+
 /etc/fstab
 /etc/vconsole.conf
 /etc/mkinitcpio.conf
@@ -10,12 +14,13 @@
 /etc/plymouth
 /etc/pam.d/sway-autologin
 /etc/pipewire
-/boot/EFI/refind/refind.conf
-/boot/EFI/refind/icons
-/boot/EFI/refind/themes
+/etc/modules-load.d
+
 /usr/local/share/kbd/keymaps/personal.map
 /usr/share/wayland-sessions/sway.desktop
+
 /home/fyodor/.theme
 /home/fyodor/.config
 /home/fyodor/.profile
+/home/fyodor/.scripts
 /home/fyodor/.bashrc

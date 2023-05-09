@@ -1,0 +1,6 @@
+#!/bin/bash
+
+NEWIDX=$(~/.scripts/free-sway-workspace)
+
+swaymsg move container to workspace $NEWIDX
+swaymsg workspace $NEWIDX

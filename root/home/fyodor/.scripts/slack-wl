@@ -1,0 +1,2 @@
+#!/bin/bash
+slack --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --ozone-platform=wayland -s %U
