@@ -8,6 +8,7 @@ base
 base-devel
 bat
 bison
+calibre
 chafa
 chromium
 darktable
@@ -27,6 +28,7 @@ fish
 flatpak
 flex
 foot
+fzf
 gammastep
 gcc
 gdm
@@ -58,10 +60,12 @@ make
 man-db
 man-pages
 mpv
+namcap
 ncdu
 neofetch
 neovim
 networkmanager
+nfs-utils
 nmap
 nodejs
 noto-fonts
@@ -77,6 +81,7 @@ opencl-nvidia-dev-tkg
 openssh
 p7zip
 pamixer
+paru
 patch
 pavucontrol
 pipewire-alsa
@@ -103,6 +108,7 @@ sof-firmware
 sov
 sudo
 sway-git
+swaybg-spread
 swaylock
 sxiv
 telegram-desktop

@@ -40,7 +40,7 @@ input "type:keyboard" {
 
 # Set background Image
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/.theme/active/wallpaper.jpg fill
+#output * bg ~/.theme/active/wallpaper.jpg fill
 
 
 

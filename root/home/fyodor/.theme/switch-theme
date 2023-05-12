@@ -4,7 +4,8 @@
 mydir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" > /dev/null && pwd )"
 # Link theme directory to active
 ln -snf $mydir/themes/$1 $mydir/active;
-feh --bg-fill --no-xinerama ~/.theme/active/wallpaper.jpg;
+#feh --bg-fill --no-xinerama ~/.theme/active/wallpaper.jpg;
+swaybg-spread -i .theme/active/wallpaper.jpg > .config/sway/config.d/bg.conf;
 
 # Write name of theme into a file that is monitored by neovim.
 nvim_theme=$(cat $mydir/active/theme_name)
