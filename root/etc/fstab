@@ -8,4 +8,7 @@ UUID=5fad89c0-be5e-4d5f-919c-a16753c6e09d	/         	ext4      	rw,relatime	0 1
 # /dev/nvme1n1p1
 UUID=84A6-B664      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro	0 2
 /swapfile none swap defaults 0 0
+192.168.1.110:/Data /mnt/shared/data nfs rw,bg,hard,intr,nosuid 0 0
+192.168.1.110:/Documents /mnt/shared/documents nfs rw,bg,hard,intr,nosuid 0 0
+192.168.1.110:/Media /mnt/shared/media nfs rw,bg,hard,intr,nosuid 0 0
 

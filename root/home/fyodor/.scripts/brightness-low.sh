@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ddcutil --bus 3 setvcp 10 40
-ddcutil --bus 4 setvcp 10 40
+ddcutil --bus 3 setvcp 10 60
+ddcutil --bus 4 setvcp 10 60
 
 ## Run the ddcutil detect command, extract the bus numbers, and loop over them
 #ddcutil detect | grep bus | grep -oP '/dev/i2c-\K\d+' | while read bus_num; do

@@ -115,6 +115,9 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
+  use 'norcalli/nvim-colorizer.lua'
+  -- use 'ziontee113/color-picker.nvim'
+
 
   use 'renerocksai/calendar-vim'
   use 'renerocksai/telekasten.nvim'
@@ -139,6 +142,7 @@ return packer.startup(function(use)
 
 
   use 'gpanders/editorconfig.nvim'
+
   -- use {
   --   'mfussenegger/nvim-dap',
   --   opt = true,

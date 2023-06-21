@@ -20,6 +20,7 @@ dolphin
 dunst
 efibootmgr
 efitools
+eww
 fakeroot
 fd
 ffmpegthumbnailer
@@ -32,12 +33,14 @@ fzf
 gammastep
 gcc
 gdm
+gimp
 git
 glfw-wayland
 gnu-efi
 gnu-free-fonts
 gphoto2
 grim
+grimshot
 groff
 htop
 i2c-tools
@@ -133,6 +136,7 @@ xf86-video-intel
 xf86-video-vesa
 yay
 youtube-dl
+yt-dlp
 zathura
 zathura-pdf-mupdf
 zoom

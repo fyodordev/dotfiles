@@ -183,39 +183,36 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
+
 colors:
   # Default colors
   primary:
-    #background: '0x24283b'
-    background: '0x1f2335'
-    foreground: '0xc0caf5'
-
+    background: '0x152528'
+    foreground: '0xe6eaea'
   # Normal colors
   normal:
-    black:   '0x1d202f'
-      #black:   '0x000000'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xa9b1d6'
-
+    black:   '0x2f3239'
+    red:     '0xe85c51'
+    green:   '0x7aa4a1'
+    yellow:  '0xfda47f'
+    blue:    '0x5a93aa'
+    magenta: '0xad5c7c'
+    cyan:    '0xa1cdd8'
+    white:   '0xebebeb'
   # Bright colors
   bright:
-    black:   '0x414868'
-    red:     '0xf7768e'
-    green:   '0x9ece6a'
-    yellow:  '0xe0af68'
-    blue:    '0x7aa2f7'
-    magenta: '0xbb9af7'
-    cyan:    '0x7dcfff'
-    white:   '0xc0caf5'
+    black:   '0x4e5157'
+    red:     '0xeb746b'
+    green:   '0x8eb2af'
+    yellow:  '0xfdb292'
+    blue:    '0x73a3b7'
+    magenta: '0xb97490'
+    cyan:    '0xafd4de'
+    white:   '0xeeeeee'
 
-  indexed_colors:
-    - { index: 16, color: '0xff9e64' }
-    - { index: 17, color: '0xdb4b4b' }
+indexed_colors:
+  - { index: 16, color: '0xff9e64' }
+  - { index: 17, color: '0xdb4b4b' }
 
     # Bright and dim foreground colors
     #

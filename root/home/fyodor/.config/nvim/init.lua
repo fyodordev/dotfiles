@@ -6,8 +6,6 @@ require "user.cmp"
 require "user.telescope"
 require "user.lsp"
 require("user.dap").setup()
--- require "dap-install"
--- require("rust-tools").setup({})
 
 require "user.treesitter"
 require "user.autopairs"
@@ -17,6 +15,7 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
+
 require "user.project"
 require "user.impatient"
 require "user.indentline"
@@ -27,8 +26,16 @@ require "user.symbols-outline"
 require "user.lightbulb"
 require "user.todo-comments"
 require "user.neoscroll"
-
 require("user.themes.loader")
 require("user.themes.onedark-deep")
+
+
+
+
+
+
+
+-- require "dap-install"
+-- require("rust-tools").setup({})
 -- require('tokyonight.extra').setup()
 
