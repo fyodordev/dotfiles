@@ -77,6 +77,12 @@ bindcode --release 133 exec "wofi --show run"
 ## Basics:
 ##
 # Start a terminal
+
+# Screenshot
+#bindsym $mod2+F12 exec "grimshot save output"
+bindsym $mod+Shift+s exec "grimshot save output"
+
+
 bindsym $mod+Return exec $term
 bindsym $mod2+Return exec alacritty
 ## Kill focused window

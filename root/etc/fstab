@@ -11,4 +11,5 @@ UUID=84A6-B664      	/boot     	vfat      	rw,relatime,fmask=0022,dmask=0022,cod
 192.168.1.110:/Data /mnt/shared/data nfs rw,bg,hard,intr,nosuid 0 0
 192.168.1.110:/Documents /mnt/shared/documents nfs rw,bg,hard,intr,nosuid 0 0
 192.168.1.110:/Media /mnt/shared/media nfs rw,bg,hard,intr,nosuid 0 0
+/dev/mapper/linux-data--unencrypted /mnt/data ext4 rw,relatime 0 0
 
