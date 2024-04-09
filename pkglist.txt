@@ -27,7 +27,6 @@ dunst
 efibootmgr
 efitools
 egl-wayland
-eww
 expect
 fakeroot
 fd
@@ -43,7 +42,7 @@ gcc
 gdm
 gimp
 git
-glfw-wayland
+glfw
 gnu-efi
 gnu-free-fonts
 gphoto2
@@ -86,7 +85,6 @@ neovim
 networkmanager
 nfs-utils
 nmap
-nodejs
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -155,7 +153,6 @@ wget
 which
 wireplumber
 wl-clipboard
-wlroots-nvidia-git
 wlsunset-git
 wofi
 xf86-input-evdev
