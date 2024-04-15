@@ -3,6 +3,13 @@
 --if status_ok then
 --  default_schemas = jsonls_settings.get_default_schemas()
 --end
+--
+--
+local status_ok, lspconfig = pcall(require, "lspconfig")
+if not status_ok then
+  return
+end
+
 
 local schemas = {
   {
@@ -176,8 +183,7 @@ local schemas = {
 --end
 --
 --local extended_schemas = extend(schemas, default_schemas)
-
-local opts = {
+lspconfig.jsonls.setup({
   settings = {
     json = {
       --schemas = extended_schemas,
@@ -193,6 +199,5 @@ local opts = {
       },
     },
   },
-}
+})
 
-return opts

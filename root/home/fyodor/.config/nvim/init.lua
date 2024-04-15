@@ -26,6 +26,7 @@ require "user.symbols-outline"
 require "user.lightbulb"
 require "user.todo-comments"
 require "user.neoscroll"
+--require "user.gen"
 require("user.themes.loader")
 require("user.themes.onedark-deep")
 

@@ -95,6 +95,7 @@ nvidia-dkms
 nvidia-settings
 nvidia-utils
 obsidian
+ocrmypdf
 opencl-nvidia-dev-tkg
 openssh
 openvpn
@@ -112,6 +113,7 @@ pkgconf
 plymouth
 poppler
 powertop
+procs
 pulsemixer
 python-pip
 qbittorrent
@@ -137,6 +139,7 @@ system-config-printer
 tailscale
 telegram-desktop
 terminus-font
+tesseract-data-eng
 texinfo
 ttf-atom-file-icons
 ttf-hack

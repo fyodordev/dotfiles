@@ -40,6 +40,11 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+  -- Required dependencies for other plugins
+  use "nvim-neotest/nvim-nio"
+
+
+
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -97,8 +102,11 @@ return packer.startup(function(use)
   -- LSP
   -- TODO: Fix order of lspconfig, lsp-installer plugins
   --    As described here: https://github.com/williamboman/nvim-lsp-installer
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "ray-x/lsp_signature.nvim"
@@ -142,6 +150,9 @@ return packer.startup(function(use)
 
 
   use 'gpanders/editorconfig.nvim'
+
+  -- AI
+  use "David-Kunz/gen.nvim"
 
   -- use {
   --   'mfussenegger/nvim-dap',
