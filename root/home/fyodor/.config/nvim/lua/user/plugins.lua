@@ -100,9 +100,6 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  -- TODO: Fix order of lspconfig, lsp-installer plugins
-  --    As described here: https://github.com/williamboman/nvim-lsp-installer
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "williamboman/mason.nvim" -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim"
   use "neovim/nvim-lspconfig" -- enable LSP

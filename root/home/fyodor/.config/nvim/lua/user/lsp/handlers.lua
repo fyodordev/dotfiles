@@ -51,9 +51,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     --     vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' })
     -- end, { desc = 'Toggle Diagnostics' })
 
-    vim.keymap.set('n', '<space>f', function()
-      vim.lsp.buf.format { async = true }
-    end, opts)
+    -- Format buffer
+    -- vim.keymap.set('n', '<space>f', function()
+    --   vim.lsp.buf.format { async = true }
+    -- end, opts)
   end,
 })
 
