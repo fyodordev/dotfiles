@@ -20,6 +20,8 @@ require "user.lsp.mason"
 -- local python_opts = 
 -- lspconfig.pyright.setup(require("user.lsp.settings.python"))
 
+require("user.lsp.settings.lua")
+require("user.lsp.settings.css")
 require("user.lsp.settings.jsonls")
 require("user.lsp.settings.rust")
 require("user.lsp.settings.python")

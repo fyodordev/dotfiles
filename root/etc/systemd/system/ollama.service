@@ -1,0 +1,14 @@
+[Unit]
+Description=Ollama Service
+After=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/ollama serve
+User=ollama
+Group=ollama
+Restart=always
+RestartSec=3
+Environment="PATH=/usr/local/sbin:/usr/local/bin:/usr/bin:/home/fyodor/.scripts:/var/lib/snapd/snap/bin:/snap/bin:/home/fyodor/.local/bin:/opt/apache-spark/bin:/opt/apache-spark/python"
+
+[Install]
+WantedBy=default.target
