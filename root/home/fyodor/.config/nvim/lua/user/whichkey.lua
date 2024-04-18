@@ -101,6 +101,9 @@ local mappings = {
   ["h"] = { "<cmd>split<cr>", "Horizontal Split" },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+  ["N"] = { "<cmd>!bash -c 'nohup $($TERM nvim . &>/dev/null) & disown'<CR><CR>", "New window" },
+
+  ["T"]  = { "<cmd>!bash -c 'nohup $($TERM &>/dev/null) & disown'<CR><CR>", "External Terminal"},
 
   p = {
     name = "Packer",
@@ -192,7 +195,6 @@ local mappings = {
     f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
-    e = { "<cmd>!bash -c 'nohup $($TERM &>/dev/null) & disown'<CR><CR>", "External"}
   },
 }
 
