@@ -113,6 +113,12 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use {'nvim-telescope/telescope-ui-select.nvim' }
+  --use { 'jonarrien/telescope-cmdline.nvim' }
+
+  -- Noice
+  use "folke/noice.nvim"
+  use "MunifTanjim/nui.nvim"
+  use "rcarriga/nvim-notify"
 
   -- Treesitter
   use {
