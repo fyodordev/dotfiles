@@ -42,6 +42,7 @@ gcc
 gdm
 gimp
 git
+gitleaks
 glfw
 gnu-efi
 gnu-free-fonts

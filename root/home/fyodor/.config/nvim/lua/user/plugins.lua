@@ -112,6 +112,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use {'nvim-telescope/telescope-ui-select.nvim' }
 
   -- Treesitter
   use {
@@ -129,6 +130,7 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "NeogitOrg/neogit"
 
   --Todos
   use {
@@ -147,6 +149,9 @@ return packer.startup(function(use)
 
 
   use 'gpanders/editorconfig.nvim'
+
+  -- Task/Code runner
+  use { 'stevearc/overseer.nvim' }
 
   -- AI
   use "David-Kunz/gen.nvim"

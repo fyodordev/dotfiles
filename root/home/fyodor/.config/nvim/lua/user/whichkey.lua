@@ -3,6 +3,8 @@ if not status_ok then
   return
 end
 
+local telescope = require('telescope.builtin');
+
 local setup = {
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
@@ -146,13 +148,14 @@ local mappings = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
     d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
+      telescope.lsp_document_symbols,
+      "Document Symbols",
     },
     w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
+      telescope.lsp_workspace_symbols,
+      "Workspace Symbols",
     },
+    t = { telescope.lsp_type_definitions, "Type Definitions" },
     f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
@@ -172,7 +175,7 @@ local mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
-    e = { "<cmd>Telescope diagnostics<cr>", "Show diagnostics items." },
+    e = { telescope.diagnostics, "Show diagnostics items." },
   },
   s = {
     name = "Search",
