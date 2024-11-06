@@ -20,7 +20,24 @@
 /usr/share/wayland-sessions/sway.desktop
 
 /home/fyodor/.theme
-/home/fyodor/.config
 /home/fyodor/.profile
 /home/fyodor/.scripts
 /home/fyodor/.bashrc
+
+/home/fyodor/.config/dunst
+/home/fyodor/.config/fish
+/home/fyodor/.config/omf
+/home/fyodor/.config/foot
+/home/fyodor/.config/paru
+/home/fyodor/.config/pulse
+/home/fyodor/.config/rclone
+/home/fyodor/.config/rofi
+/home/fyodor/.config/sway
+/home/fyodor/.config/systemd
+/home/fyodor/.config/waybar
+/home/fyodor/.config/zathura
+/home/fyodor/.config/mimeapps.list
+/home/fyodor/.config/user-dirs.dirs
+/home/fyodor/.config/user-dirs.locale
+
+

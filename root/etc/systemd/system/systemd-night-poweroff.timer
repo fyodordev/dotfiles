@@ -1,0 +1,13 @@
+
+
+[Unit]
+Description=Poweroff every work day
+
+[Timer]
+# Power off every day at a certain time.
+OnCalendar=*-*-* 23:20:00
+# Call necessary service
+Unit=systemd-poweroff.service
+
+[Install]
+WantedBy=timers.target

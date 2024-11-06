@@ -1,1 +1,0 @@
-/home/fyodor/.theme/active/neovim/theme.lua
