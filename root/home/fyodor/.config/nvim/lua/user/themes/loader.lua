@@ -48,17 +48,10 @@ local function reload()
     return
   end
 
-  if (theme == 'nightfox') then
+  if (theme == 'highcontrast') then
     vim.cmd[[colorscheme default]]
-    vim.cmd[[colorscheme terafox]]
-    -- require('user.themes.github-light')()
-    return
-  end
-
-  if (theme == 'duskfox') then
-    vim.cmd[[colorscheme default]]
-    vim.cmd[[colorscheme terafox]]
-    -- require('user.themes.github-light')()
+    require('noctishc').setup()
+    -- require('user.themes.cyberdream')()
     return
   end
 

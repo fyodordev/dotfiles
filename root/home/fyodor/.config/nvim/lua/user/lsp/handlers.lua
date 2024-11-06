@@ -87,7 +87,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 
-
 -- local M = {}
 -- 
 -- -- TODO: backfill this to template

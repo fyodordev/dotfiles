@@ -4,7 +4,7 @@ if not status_ok then
   return
 end
 
-lspconfig.tsserver.setup{
+lspconfig.ts_ls.setup{
   settings = {
     completions = {
       completeFunctionCalls = true

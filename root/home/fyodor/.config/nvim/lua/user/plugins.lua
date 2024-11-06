@@ -79,10 +79,8 @@ return packer.startup(function(use)
   use 'shaunsingh/moonlight.nvim'
   use "yonlu/omni.vim"
   use {'nxvu699134/vn-night.nvim'}
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin"
-  })
+  use "scottmckendry/cyberdream.nvim"
+  use "iagorrr/noctishc.nvim"
 
   -- General appearance related plugins
   use 'karb94/neoscroll.nvim'
@@ -120,6 +118,11 @@ return packer.startup(function(use)
       require("lsp-file-operations").setup()
     end,
   }
+
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-ui"
+  use { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }}
+
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

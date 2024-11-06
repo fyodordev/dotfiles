@@ -157,7 +157,7 @@ mason_lspconfig.setup({
       "rust_analyzer",
       "pyright",
       "jsonls",
-      "tsserver",
+      "ts_ls",
       "cssls",
       "cssmodules_ls"
     },

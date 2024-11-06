@@ -15,6 +15,7 @@ calibre
 chafa
 chromium
 clipgrab
+composer
 cups
 cups-pdf
 darktable
@@ -22,6 +23,7 @@ ddcutil
 debugedit
 discord
 dkms
+docker
 dolphin
 dunst
 efibootmgr
@@ -76,6 +78,7 @@ m4
 make
 man-db
 man-pages
+mariadb
 mpd
 mpv
 namcap
@@ -102,10 +105,12 @@ openssh
 openvpn
 p7zip
 pamixer
-paru
+paru-git
+paru-git-debug
 pass
 patch
 pavucontrol
+php
 pinentry-bemenu
 pipewire-alsa
 pipewire-docs
@@ -132,7 +137,7 @@ slack-desktop
 sof-firmware
 sov
 sudo
-sway
+sway-git
 swaybg-spread
 swaylock
 sxiv
@@ -148,6 +153,7 @@ ttf-inconsolata
 ttf-nerd-fonts-symbols
 upower
 usbutils
+visidata
 vlc
 waybar
 wayland
@@ -162,7 +168,6 @@ wofi
 xf86-input-evdev
 xf86-video-intel
 xf86-video-vesa
-youtube-dl
 yt-dlp
 zathura
 zathura-pdf-mupdf

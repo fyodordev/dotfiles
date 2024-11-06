@@ -2,6 +2,7 @@
 application/x-java-jnlp-file=javaws.desktop;
 x-scheme-handler/tg=userapp-Telegram Desktop-UX0FW0.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
 
 [Default Applications]
 x-scheme-handler/msteams=teams.desktop
@@ -21,3 +22,4 @@ x-scheme-handler/https=firefox.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop
 audio/mpeg=mpv.desktop
 x-scheme-handler/polypane=Polypane.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop

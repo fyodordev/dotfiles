@@ -13,15 +13,15 @@ require('neoscroll').setup({
     performance_mode = false,    -- Disable "Performance Mode" on all buffers.
 })
 
--- Syntax: t[keys] = {function, {function arguments}}
-require('neoscroll.config').set_mappings({
-  ['<C-u>'] = {'scroll', {'-vim.wo.scroll', 'true', '160'}},
-  ['<C-d>'] = {'scroll', { 'vim.wo.scroll', 'true', '160'}},
-  ['<C-b>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '220'}},
-  ['<C-f>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '220'}},
-  ['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}},
-  ['<C-e>'] = {'scroll', { '0.10', 'false', '100'}},
-  ['zt']    = {'zt', {'100'}},
-  ['zz']    = {'zz', {'100'}},
-  ['zb']    = {'zb', {'100'}},
-})
+local neoscroll = require('neoscroll')
+
+--neoscroll.ctrl_y({'scroll', {'-vim.wo.scroll', 'true', '100'}})
+--neoscroll.ctrl_e({'scroll', {'-vim.wo.scroll', 'true', '100'}})
+neoscroll.ctrl_u({'scroll', {'-vim.wo.scroll', 'true', '160'}})
+neoscroll.ctrl_d({'scroll', {'-vim.wo.scroll', 'true', '160'}})
+neoscroll.ctrl_b({'scroll', {'-vim.wo.scroll', 'true', '220'}})
+neoscroll.ctrl_f({'scroll', {'-vim.wo.scroll', 'true', '220'}})
+--neoscroll.zt({'zt', {'-vim.wo.scroll', 'true', '100'}})
+--neoscroll.zz({'zz', {'-vim.wo.scroll', 'true', '100'}})
+--neoscroll.zb({'zb', {'-vim.wo.scroll', 'true', '100'}})
+
