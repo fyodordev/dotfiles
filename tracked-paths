@@ -28,9 +28,11 @@
 /home/fyodor/.config/fish
 /home/fyodor/.config/omf
 /home/fyodor/.config/foot
+/home/fyodor/.config/htop
+/home/fyodor/.config/lf
+/home/fyodor/.config/nvim
 /home/fyodor/.config/paru
 /home/fyodor/.config/pulse
-/home/fyodor/.config/rclone
 /home/fyodor/.config/rofi
 /home/fyodor/.config/sway
 /home/fyodor/.config/systemd
