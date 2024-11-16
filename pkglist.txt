@@ -111,6 +111,7 @@ pass
 patch
 pavucontrol
 php
+php-gd
 pinentry-bemenu
 pipewire-alsa
 pipewire-docs

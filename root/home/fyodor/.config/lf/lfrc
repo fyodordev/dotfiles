@@ -39,7 +39,7 @@ cmd open ${{
 }}
 
 
-cmd cpydir $echo -n "$f" | xclip -selection clipboard
+cmd cpydir $echo -n "$f" | wl-copy
 map a cpydir
 
 cmd trash %{{
