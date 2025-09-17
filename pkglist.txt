@@ -1,3 +1,4 @@
+7zip
 adobe-source-sans-fonts
 adobe-source-serif-fonts
 alacritty
@@ -21,6 +22,7 @@ cups-pdf
 darktable
 ddcutil
 debugedit
+devtools
 discord
 dkms
 docker
@@ -56,7 +58,9 @@ helix
 htop
 i2c-tools
 imv
+inkscape
 intel-ucode
+jdownloader2
 jellyfin-server
 jellyfin-web
 kitty
@@ -76,9 +80,11 @@ linux-zen-headers
 lvm2
 m4
 make
+makemkv
 man-db
 man-pages
 mariadb
+mkvtoolnix-gui
 mpd
 mpv
 namcap
@@ -89,6 +95,7 @@ neovim
 networkmanager
 nfs-utils
 nmap
+nodejs-lts-iron
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -98,12 +105,10 @@ ntfs-3g
 nvidia-dkms
 nvidia-settings
 nvidia-utils
-obsidian
 ocrmypdf
 opencl-nvidia-dev-tkg
 openssh
 openvpn
-p7zip
 pamixer
 paru-git
 paru-git-debug
@@ -121,6 +126,7 @@ plymouth
 poppler
 powertop
 procs
+prowlarr-bin
 pulsemixer
 python-pip
 qbittorrent
@@ -131,6 +137,7 @@ read-edid
 refind
 ripgrep
 rofi-lbonn-wayland-git
+roomeqwizard
 rsync
 rustup
 signal-desktop
@@ -138,7 +145,7 @@ slack-desktop
 sof-firmware
 sov
 sudo
-sway-git
+sway
 swaybg-spread
 swaylock
 sxiv
@@ -148,6 +155,7 @@ telegram-desktop
 terminus-font
 tesseract-data-eng
 texinfo
+torbrowser-launcher
 ttf-atom-file-icons
 ttf-hack
 ttf-inconsolata

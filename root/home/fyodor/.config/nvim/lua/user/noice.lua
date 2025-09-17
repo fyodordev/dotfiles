@@ -1,4 +1,15 @@
 require("noice").setup({
+  views = {
+    notify = {
+      view = "mini",
+      -- replace = true,
+      -- merge = true,
+      -- position = {
+      --   row = -2,  -- negative values position from bottom
+      --   col = "50%",
+      -- },
+    },
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
