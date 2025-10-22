@@ -15,10 +15,17 @@ capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 -- Export capabilities for use in LSP server configs
 _G.lsp_capabilities = capabilities
 
--- Configure diagnostics
+-- Configure diagnostics with modern API
 vim.diagnostic.config({
   virtual_text = true,
-  signs = true,
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.HINT] = "",
+      [vim.diagnostic.severity.INFO] = "",
+    },
+  },
   update_in_insert = false,
   underline = true,
   severity_sort = true,
@@ -31,18 +38,6 @@ vim.diagnostic.config({
     prefix = "",
   },
 })
-
--- Define diagnostic signs
-local signs = {
-  { name = "DiagnosticSignError", text = "" },
-  { name = "DiagnosticSignWarn", text = "" },
-  { name = "DiagnosticSignHint", text = "" },
-  { name = "DiagnosticSignInfo", text = "" },
-}
-
-for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

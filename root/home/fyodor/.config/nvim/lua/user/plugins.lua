@@ -143,7 +143,20 @@ return {
   { "williamboman/mason-lspconfig.nvim", lazy = true },
   { "neovim/nvim-lspconfig", lazy = true },
   { "tamago324/nlsp-settings.nvim" }, -- language server settings defined in json
-  { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("user.lsp.lint")
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    event = { "BufReadPost", "BufNewFile" },
+    config = function()
+      require("user.lsp.conform")
+    end,
+  },
   {
     "ray-x/lsp_signature.nvim",
     event = "LspAttach",
@@ -188,6 +201,7 @@ return {
   -- Telescope
   {
     "nvim-telescope/telescope.nvim",
+    event = "VeryLazy",
     cmd = "Telescope",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -201,12 +215,14 @@ return {
   -- Noice
   {
     "folke/noice.nvim",
-    enabled = false, -- Currently disabled, see todo item #17
     event = "VeryLazy",
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     },
+    config = function()
+      require("user.noice")
+    end,
   },
 
   -- Treesitter

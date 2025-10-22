@@ -2,7 +2,7 @@
 
 2. Remove impatient.nvim **DONE**
 
-3. Replace null-ls.nvim with nvim-lint + conform.nvim
+3. Replace null-ls.nvim with nvim-lint + conform.nvim **DONE**
 
 4. Fix deprecated icon references **DONE**
 
