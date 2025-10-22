@@ -1,8 +1,5 @@
-local status_ok, overseer = pcall(require, "overseer")
-if not status_ok then
-  return
-end
+local overseer = require("overseer")
 
-overseer.setup {
+overseer.setup({
   -- strategy = "toggleterm",
-}
+})

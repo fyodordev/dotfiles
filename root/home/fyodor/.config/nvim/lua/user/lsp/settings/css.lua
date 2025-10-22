@@ -1,7 +1,14 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-  return
-end
+vim.lsp.config.cssls = {
+  default_config = {
+    capabilities = _G.lsp_capabilities,
+  }
+}
 
-lspconfig.cssls.setup({})
-lspconfig.cssmodules_ls.setup({})
+vim.lsp.config.cssmodules_ls = {
+  default_config = {
+    capabilities = _G.lsp_capabilities,
+  }
+}
+
+vim.lsp.enable('cssls')
+vim.lsp.enable('cssmodules_ls')

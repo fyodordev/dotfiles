@@ -163,6 +163,9 @@ mason_lspconfig.setup({
     },
 })
 
+-- Setup handlers are not needed since we manually configure servers
+-- in lua/user/lsp/settings/* files. Mason just ensures they're installed.
+
 -- mason.on_server_ready(function(server)
 --   -- at this point server can be used like lspconfig.<server>
 -- 	local opts = {

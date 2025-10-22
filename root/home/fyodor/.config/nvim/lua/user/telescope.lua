@@ -1,14 +1,10 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+local telescope = require("telescope")
 
 local actions = require "telescope.actions"
 
-telescope.setup {
+telescope.setup({
   defaults = {
     -- borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
-    borders = true,
     borderchars = { "━", "┃", "━", "┃", "┏", "┓", "┛", "┗" },
     prompt_prefix = " ",
     selection_caret = " ",
@@ -94,27 +90,25 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        -- even more opts
-      }
-
-      -- pseudo code / specification for writing custom displays, like the one
-      -- for "codeactions"
-      -- specific_opts = {
-      --   [kind] = {
-      --     make_indexed = function(items) -> indexed_items, width,
-      --     make_displayer = function(widths) -> displayer
-      --     make_display = function(displayer) -> function(e)
-      --     make_ordinal = function(e) -> string
-      --   },
-      --   -- for example to disable the custom builtin "codeactions" display
-      --      do the following
-      --   codeactions = false,
-      -- }
+    ["ui-select"] = require("telescope.themes").get_dropdown {
+      -- even more opts
     }
+
+    -- pseudo code / specification for writing custom displays, like the one
+    -- for "codeactions"
+    -- specific_opts = {
+    --   [kind] = {
+    --     make_indexed = function(items) -> indexed_items, width,
+    --     make_displayer = function(widths) -> displayer
+    --     make_display = function(displayer) -> function(e)
+    --     make_ordinal = function(e) -> string
+    --   },
+    --   -- for example to disable the custom builtin "codeactions" display
+    --      do the following
+    --   codeactions = false,
+    -- }
   },
-}
+})
 
 telescope.load_extension('ui-select')
 -- telescope.load_extension('cmdline')

@@ -7,6 +7,42 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 
 local telescope = require('telescope.builtin')
 
+-- Setup LSP capabilities for autocompletion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+local cmp_nvim_lsp = require("cmp_nvim_lsp")
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
+
+-- Export capabilities for use in LSP server configs
+_G.lsp_capabilities = capabilities
+
+-- Configure diagnostics
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  update_in_insert = false,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = false,
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
+  },
+})
+
+-- Define diagnostic signs
+local signs = {
+  { name = "DiagnosticSignError", text = "" },
+  { name = "DiagnosticSignWarn", text = "" },
+  { name = "DiagnosticSignHint", text = "" },
+  { name = "DiagnosticSignInfo", text = "" },
+}
+
+for _, sign in ipairs(signs) do
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

@@ -1,9 +1,10 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-  return
-end
+vim.lsp.config.lua_ls = {
+  default_config = {
+    capabilities = _G.lsp_capabilities,
+  }
+}
 
-lspconfig.lua_ls.setup({})
+vim.lsp.enable('lua_ls')
 
 --  {
 -- 	settings = {

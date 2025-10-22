@@ -1,35 +1,16 @@
-require "user.options"
-require "user.keymaps"
-require "user.plugins"
-require "user.colorscheme"
-require "user.cmp"
-require "user.telescope"
-require "user.lsp"
-require("user.dap").setup()
+-- Bootstrap lazy.nvim
+require("user.lazy")
 
-require "user.treesitter"
-require "user.autopairs"
-require "user.comment"
-require "user.gitsigns"
-require "user.neogit"
-require "user.nvim-tree"
-require "user.bufferline"
-require "user.lualine"
-require "user.toggleterm"
-require "user.overseer"
+-- Setup plugins
+require("lazy").setup("user.plugins")
 
-require "user.project"
-require "user.impatient"
-require "user.indentline"
-require "user.alpha"
-require "user.whichkey"
-require "user.autocommands"
-require "user.symbols-outline"
-require "user.lightbulb"
-require "user.todo-comments"
-require "user.neoscroll"
-require "user.noice"
---require "user.gen"
+-- Core configuration
+require("user.options")
+require("user.keymaps")
+require("user.colorscheme")
+require("user.autocommands")
+
+-- Theme configuration
 require("user.themes.loader")
 require("user.themes.onedark-deep")
 
