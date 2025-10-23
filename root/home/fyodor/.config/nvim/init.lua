@@ -1,3 +1,7 @@
+-- Set leader keys BEFORE loading lazy.nvim
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Bootstrap lazy.nvim
 require("user.lazy")
 
