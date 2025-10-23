@@ -24,9 +24,6 @@ require("noice").setup({
     backend = "nui", -- Use nui backend for popup menu
   },
   views = {
-    notify = {
-      view = "mini",
-    },
     cmdline_popup = {
       position = {
         row = "50%",
