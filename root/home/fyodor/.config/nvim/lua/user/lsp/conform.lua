@@ -24,9 +24,9 @@ conform.setup({
     lsp_fallback = true,
   },
   formatters = {
-    prettier = {
-      prepend_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-    },
+    -- prettier = {
+    --   prepend_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+    -- },
     black = {
       prepend_args = { "--fast" },
     },
