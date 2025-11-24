@@ -180,15 +180,14 @@ wev
 wget
 which
 wireplumber
-wkhtmltopdf
 wl-clipboard
 wlsunset-git
 wofi
 xf86-input-evdev
 xf86-video-intel
 xf86-video-vesa
+yazi
 yt-dlp
 zathura
 zathura-pdf-mupdf
 zellij
-zoom

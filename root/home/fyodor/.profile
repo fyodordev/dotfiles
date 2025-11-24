@@ -45,6 +45,7 @@ export PYSPARK_PYTHON=python3
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 export TERM='foot'
+export EDITOR='/usr/bin/nvim'
 
 
 
@@ -55,7 +56,7 @@ alias sxiv='sxiv -b'
 alias q='exit'
 alias cli='xclip -sel clip'
 #alias f='lfrun'
-alias f='lf'
+alias f='yazi'
 
 alias ls='ls --color=auto'
 alias cgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
