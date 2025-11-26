@@ -67,3 +67,11 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+-- OSC52 Clipboard --
+-- Copy to clipboard via OSC52 (works over SSH)
+-- Note: Yanking (y) already copies to clipboard automatically via the OSC52 integration
+-- These keymaps provide additional explicit copy operations if needed
+keymap("n", "<leader>c", '<cmd>lua require("osc52").copy_operator()<CR>', { noremap = true, silent = true, desc = "OSC52 copy operator" })
+keymap("n", "<leader>cc", '<cmd>lua require("osc52").copy_operator() .. "_"<CR>', { noremap = true, silent = true, desc = "OSC52 copy line" })
+keymap("v", "<leader>c", '<cmd>lua require("osc52").copy_visual()<CR>', { noremap = true, silent = true, desc = "OSC52 copy selection" })
+

@@ -249,6 +249,13 @@ return {
     "norcalli/nvim-colorizer.lua",
     event = { "BufReadPost", "BufNewFile" },
   },
+  {
+    "ojroques/nvim-osc52",
+    lazy = false, -- Load immediately to set up clipboard provider
+    config = function()
+      require("user.osc52")
+    end,
+  },
   { "renerocksai/calendar-vim", cmd = "Calendar" },
   {
     "renerocksai/telekasten.nvim",
