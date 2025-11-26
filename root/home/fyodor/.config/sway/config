@@ -48,7 +48,7 @@ input "type:keyboard" {
 set $term foot
 ## Font for window titles. Will also be used by the bar unless a different font
 ## is used in the bar {} block below.
-# font pango:monospace 1
+# font pango:monospace 0.5
 # titlebar_padding 1
 # titlebar_border_thickness 0
 
@@ -71,7 +71,10 @@ set $right l
 ##set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #bindcode --release 133 bar hidden_state show; exec "rofi -theme normalmenu -show run -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f' && swaymsg bar hidden_state hide"
 #bindcode --release 133 exec "rofi -theme normalmenu -show run -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f' && swaymsg bar hidden_state hide"
-bindcode --release 133 exec "wofi --show run"
+#bindcode --release 133 exec "wofi --show run"
+set $menu tofi-run --font /usr/share/fonts/TTF/Hack-Regular.ttf --ascii-input true | xargs swaymsg exec --
+bindcode --release 133 exec $menu 
+
 ###bindsym $mod+Menu exec --no-startup-id "rofi -show run -sidebar-mode -modi 'run,window'"
 #bindsym $mod+space --release exec --no-startup-id "rofi -theme utilmenu -show 'power' -sidebar-mode -modi 'power:~/.config/rofi/menus/rofi-powerscript,theme:~/.config/rofi/menus/rofi-themes,system:~/.config/rofi/menus/rofi-systemscript' -kb-mode-next 'Right' -kb-mode-previous 'Left' -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f'"
 #bindsym $mod2+space --release exec --no-startup-id "rofi -theme utilmenu -show 'screencapture' -sidebar-mode -modi 'screencapture:~/.config/rofi/menus/rofi-screencapture,keyboard:~/.config/rofi/menus/rofi-keyboard,ssh:~/.config/rofi/menus/rofi-ssh' -kb-mode-next 'Right' -kb-mode-previous 'Left' -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f'"
@@ -86,7 +89,9 @@ bindsym $mod+Shift+s exec grimshot --notify save output
 
 
 bindsym $mod+Return exec $term
-bindsym $mod2+Return exec alacritty
+# bindsym $mod+ exec /usr/bin/chromium
+bindsym $mod+BackSpace exec /usr/bin/firefox
+
 ## Kill focused window
 bindsym $mod+Shift+q kill
 #    # Drag floating windows by holding down $mod and left mouse button.
@@ -258,7 +263,7 @@ smart_borders on
 #hide_edge_borders none|vertical|horizontal|both|smart
 #hide_edge_borders vertical
 
-# >>> Remove title bar and set border <<<
+# >>> Enable title bar with minimal size <<<
 default_border pixel 1
 for_window [class="^.*"] border pixel 1
 for_window [class="^.*"] default_border pixel 1

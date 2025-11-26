@@ -23,7 +23,6 @@ darktable
 ddcutil
 debugedit
 devtools
-discord
 dkms
 docker
 dolphin
@@ -163,6 +162,7 @@ texlive-basic
 texlive-fontsrecommended
 texlive-latex
 texlive-latexextra
+tofi-git
 torbrowser-launcher
 ttf-atom-file-icons
 ttf-dejavu
