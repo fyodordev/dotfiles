@@ -17,6 +17,20 @@ local function copy(lines, _)
 end
 
 local function paste()
+  -- Check if running over SSH
+  local is_ssh = os.getenv("SSH_CONNECTION") ~= nil or os.getenv("SSH_TTY") ~= nil
+
+  if not is_ssh then
+    -- Running locally, try to use wl-paste for Wayland clipboard
+    local clipboard_content = vim.fn.system("wl-paste --no-newline 2>/dev/null")
+
+    if vim.v.shell_error == 0 and clipboard_content and clipboard_content ~= "" then
+      -- Successfully read from clipboard, return as characterwise paste
+      return { vim.fn.split(clipboard_content, "\n"), "v" }
+    end
+  end
+
+  -- Fallback: use internal register (for SSH or if wl-paste failed)
   return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
 end
 
