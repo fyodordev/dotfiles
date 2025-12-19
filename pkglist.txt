@@ -11,6 +11,7 @@ base
 base-devel
 bat
 bison
+borg
 brother-dcpl3510cdw-drv-bin
 calibre
 chafa
@@ -39,6 +40,7 @@ fish
 flatpak
 flex
 foot
+fuzzel
 fzf
 gammastep
 gcc
@@ -138,7 +140,7 @@ rclone
 read-edid
 refind
 ripgrep
-rofi-lbonn-wayland-git
+rofi
 roomeqwizard
 rsync
 rustup

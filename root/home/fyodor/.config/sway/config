@@ -72,7 +72,7 @@ set $right l
 #bindcode --release 133 bar hidden_state show; exec "rofi -theme normalmenu -show run -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f' && swaymsg bar hidden_state hide"
 #bindcode --release 133 exec "rofi -theme normalmenu -show run -kb-move-char-back 'Ctrl+b' -kb-move-char-forward 'Ctrl+f' && swaymsg bar hidden_state hide"
 #bindcode --release 133 exec "wofi --show run"
-set $menu tofi-run --font /usr/share/fonts/TTF/Hack-Regular.ttf --ascii-input true | xargs swaymsg exec --
+set $menu fuzzel | xargs swaymsg exec --
 bindcode --release 133 exec $menu 
 
 ###bindsym $mod+Menu exec --no-startup-id "rofi -show run -sidebar-mode -modi 'run,window'"
@@ -90,7 +90,7 @@ bindsym $mod+Shift+s exec grimshot --notify save output
 
 bindsym $mod+Return exec $term
 # bindsym $mod+ exec /usr/bin/chromium
-bindsym $mod+BackSpace exec /usr/bin/firefox
+bindsym $mod+BackSpace exec /usr/bin/chromium
 
 ## Kill focused window
 bindsym $mod+Shift+q kill
