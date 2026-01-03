@@ -261,6 +261,13 @@ return {
     "renerocksai/telekasten.nvim",
     ft = "markdown",
   },
+  {
+    dir = "/home/fyodor/Documents/foreign-repos/markview.nvim",
+    ft = "markdown",
+    config = function()
+      require("user.markview")
+    end,
+  },
 
   -- Git
   {

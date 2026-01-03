@@ -26,6 +26,7 @@ debugedit
 devtools
 dkms
 docker
+docx2txt
 dolphin
 dunst
 efibootmgr
@@ -104,7 +105,7 @@ noto-fonts-emoji
 noto-fonts-extra
 npm
 ntfs-3g
-nvidia-dkms
+nvidia-open-dkms
 nvidia-settings
 nvidia-utils
 ocrmypdf
