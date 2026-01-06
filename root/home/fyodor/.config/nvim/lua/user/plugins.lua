@@ -262,11 +262,9 @@ return {
     ft = "markdown",
   },
   {
-    dir = "/home/fyodor/Documents/foreign-repos/markview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     ft = "markdown",
-    config = function()
-      require("user.markview")
-    end,
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
 
   -- Git
