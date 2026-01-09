@@ -18,13 +18,6 @@ require("user.autocommands")
 require("user.themes.loader")
 require("user.themes.onedark-deep")
 
-
-
-
-
-
-
 -- require "dap-install"
 -- require("rust-tools").setup({})
 -- require('tokyonight.extra').setup()
-
