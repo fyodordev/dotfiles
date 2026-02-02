@@ -7,5 +7,8 @@
 prepend_keymap = [
 	{ on = "<C-t>", run = 'shell "$SHELL" --block', desc = "Open shell here" },
 	{ on = "<C-n>", run = 'shell --orphan foot', desc = "Open new terminal window" },
+  { on = "p", run = "plugin ucp paste notify", desc = "Paste" },
+  { on = "y", run = "plugin ucp copy notify", desc = "Copy" }
 ]
+
 
