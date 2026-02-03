@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# setup — first-time setup for cloud-sync on a new machine
+#
+# Required packages:
+#   rclone      — cloud sync engine (https://rclone.org)
+#   borgbackup  — deduplicating backup (https://borgbackup.readthedocs.io)
+#   util-linux  — provides flock for concurrency control
+#
+# Before running this script:
+#   1. Install the packages above
+#   2. Run `rclone config` to create the remote specified in cloud-sync.conf
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+. "$SCRIPT_DIR/cloud-sync.conf"
+
+# --- Verify prerequisites ---
+
+missing=()
+command -v rclone >/dev/null || missing+=(rclone)
+command -v borg   >/dev/null || missing+=(borgbackup)
+command -v flock  >/dev/null || missing+=(util-linux)
+
+if [[ ${#missing[@]} -gt 0 ]]; then
+    echo "Missing required packages: ${missing[*]}"
+    exit 1
+fi
+
+# Extract remote name (everything before the colon)
+remote_name="${RCLONE_REMOTE%%:*}"
+if ! rclone listremotes | grep -q "^${remote_name}:$"; then
+    echo "rclone remote '$remote_name' not found. Run 'rclone config' to create it."
+    exit 1
+fi
+
+# --- Initialize borg repo ---
+
+if [[ ! -d "$BORG_REPO" ]]; then
+    echo "==> Initializing borg repo at $BORG_REPO"
+    # No encryption — these are local snapshots of cloud-synced (non-secret) files
+    borg init --encryption=none "$BORG_REPO"
+else
+    echo "==> Borg repo already exists at $BORG_REPO"
+fi
+
+# --- Ensure check files exist ---
+
+ensure_check_file() {
+    local path="$1"
+    if [[ ! -f "$path" ]]; then
+        echo "==> Creating $path"
+        touch "$path"
+    fi
+}
+
+ensure_check_file "$LOCAL_PATH/$CHECK_FILENAME"
+
+# Create check file on remote if missing
+if ! rclone lsf "$RCLONE_REMOTE" | grep -q "^${CHECK_FILENAME}$"; then
+    echo "==> Creating $CHECK_FILENAME on remote"
+    rclone touch "$RCLONE_REMOTE$CHECK_FILENAME"
+fi
+
+# --- Initial resync ---
+
+echo "==> Running initial resync"
+"$SCRIPT_DIR/resync"
+
+echo "==> Setup complete"

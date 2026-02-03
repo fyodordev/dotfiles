@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# sync — borg snapshot then rclone bisync
+# Run this regularly (e.g. via cron or systemd timer)
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+. "$SCRIPT_DIR/cloud-sync.conf"
+
+# Acquire an exclusive lock — exit immediately if another sync is running
+exec 9>"$LOCKFILE"
+flock --nonblock 9 || { echo "Another sync is already running"; exit 1; }
+
+echo "==> Creating borg snapshot of $LOCAL_PATH"
+borg create \
+    --compression zstd \
+    "$BORG_REPO::sync-{now:%Y-%m-%dT%H:%M:%S}" \
+    "$LOCAL_PATH"
+
+echo "==> Pruning old snapshots"
+borg prune \
+    --keep-hourly 24 \
+    --keep-daily 14 \
+    --keep-weekly 8 \
+    --keep-monthly 12 \
+    --keep-yearly -1 \
+    "$BORG_REPO"
+borg compact "$BORG_REPO"
+
+echo "==> Running bisync"
+rclone bisync "$LOCAL_PATH/" "$RCLONE_REMOTE" \
+    --check-access               `# verify both sides are reachable via CHECK_FILENAME` \
+    --check-filename "$CHECK_FILENAME" \
+    --max-delete "$MAX_DELETE"    `# abort if deletions exceed this percentage` \
+    --resilient                   `# handle minor transient errors without aborting` \
+    --recover                     `# automatically recover from a prior interrupted bisync`
+
+echo "==> Sync complete"

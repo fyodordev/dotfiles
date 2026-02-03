@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# snapshots — browse and restore borg snapshots
+#
+# Usage:
+#   snapshots list              — show all available snapshots
+#   snapshots diff <archive>    — compare an archive to current local state
+#   snapshots restore <archive> — snapshot current state, then restore the archive
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+. "$SCRIPT_DIR/cloud-sync.conf"
+
+usage() {
+    echo "Usage: $(basename "$0") {list|diff <archive>|restore <archive>}"
+    echo
+    echo "  list              Show available snapshots"
+    echo "  diff <archive>    Compare archive to current $LOCAL_PATH"
+    echo "  restore <archive> Snapshot current state first, then restore archive"
+    exit 1
+}
+
+cmd_list() {
+    borg list "$BORG_REPO"
+}
+
+cmd_diff() {
+    local archive="$1"
+    # Show files that differ between the archive and the current local state
+    borg diff "$BORG_REPO::$archive" "$LOCAL_PATH"
+}
+
+cmd_restore() {
+    local archive="$1"
+
+    echo "==> Snapshotting current state before restore"
+    borg create \
+        --compression zstd \
+        "$BORG_REPO::pre-restore-{now:%Y-%m-%dT%H:%M:%S}" \
+        "$LOCAL_PATH"
+
+    echo "==> Restoring $archive into $LOCAL_PATH"
+    # Extract into the parent directory — borg stores paths relative to /
+    cd /
+    borg extract "$BORG_REPO::$archive"
+
+    echo "==> Restore complete. Run 'sync' or 'resync' to push changes to the cloud."
+}
+
+case "${1:-}" in
+    list)    cmd_list ;;
+    diff)    [[ -n "${2:-}" ]] || usage; cmd_diff "$2" ;;
+    restore) [[ -n "${2:-}" ]] || usage; cmd_restore "$2" ;;
+    *)       usage ;;
+esac

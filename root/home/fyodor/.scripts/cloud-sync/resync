@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# resync — rebuild bisync state from scratch
+# Use after initial setup, recovery, or when bisync state is corrupted
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+. "$SCRIPT_DIR/cloud-sync.conf"
+
+exec 9>"$LOCKFILE"
+flock --nonblock 9 || { echo "Another sync is already running"; exit 1; }
+
+echo "==> Creating borg snapshot of $LOCAL_PATH"
+borg create \
+    --compression zstd \
+    "$BORG_REPO::resync-{now:%Y-%m-%dT%H:%M:%S}" \
+    "$LOCAL_PATH"
+
+echo "==> Pruning old snapshots"
+borg prune \
+    --keep-hourly 24 \
+    --keep-daily 14 \
+    --keep-weekly 8 \
+    --keep-monthly 12 \
+    --keep-yearly -1 \
+    "$BORG_REPO"
+borg compact "$BORG_REPO"
+
+echo "==> Running bisync --resync"
+rclone bisync "$LOCAL_PATH/" "$RCLONE_REMOTE" \
+    --check-access               `# verify both sides are reachable via CHECK_FILENAME` \
+    --check-filename "$CHECK_FILENAME" \
+    --max-delete "$MAX_DELETE"    `# abort if deletions exceed this percentage` \
+    --resilient                   `# handle minor transient errors without aborting` \
+    --resync                      `# rebuild bisync tracking state from current file listings`
+
+echo "==> Resync complete"
