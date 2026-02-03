@@ -261,11 +261,6 @@ return {
     "renerocksai/telekasten.nvim",
     ft = "markdown",
   },
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    ft = "markdown",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
 
   -- Git
   {
