@@ -1,0 +1,6 @@
+[Unit]
+Description=Cloud sync (borg snapshot + rclone bisync)
+
+[Service]
+Type=oneshot
+ExecStart=%h/.scripts/cloud-sync/sync --if-changed

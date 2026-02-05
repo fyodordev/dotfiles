@@ -1,0 +1,9 @@
+[Unit]
+Description=Periodic cloud sync
+
+[Timer]
+OnStartupSec=5
+OnUnitActiveSec=5min
+
+[Install]
+WantedBy=timers.target

@@ -2,10 +2,28 @@
 set -euo pipefail
 
 # sync — borg snapshot then rclone bisync
-# Run this regularly (e.g. via cron or systemd timer)
+# Pass --if-changed to skip when nothing changed (used by systemd timer)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 . "$SCRIPT_DIR/cloud-sync.conf"
+
+# --if-changed: skip if no local files changed since last sync
+if [[ "${1:-}" == "--if-changed" ]] && [[ -f "$MARKER_FILE" ]]; then
+    if ! find "$LOCAL_PATH" -newer "$MARKER_FILE" \
+         -not -name "$CHECK_FILENAME" -print -quit | grep -q .; then
+        echo "==> No local changes since last sync, skipping"
+        exit 0
+    fi
+fi
+
+# Wait for network: indefinitely on first boot (no marker), 5s otherwise
+if [[ -f "$MARKER_FILE" ]]; then
+    /usr/lib/systemd/systemd-networkd-wait-online --any --quiet --timeout 5 \
+        || { echo "==> No network, skipping"; exit 0; }
+else
+    echo "==> Waiting for network..."
+    /usr/lib/systemd/systemd-networkd-wait-online --any --quiet
+fi
 
 # Acquire an exclusive lock — exit immediately if another sync is running
 exec 9>"$LOCKFILE"
@@ -35,4 +53,5 @@ rclone bisync "$LOCAL_PATH/" "$RCLONE_REMOTE" \
     --resilient                   `# handle minor transient errors without aborting` \
     --recover                     `# automatically recover from a prior interrupted bisync`
 
+touch "$MARKER_FILE"
 echo "==> Sync complete"

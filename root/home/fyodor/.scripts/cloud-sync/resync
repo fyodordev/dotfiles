@@ -34,4 +34,5 @@ rclone bisync "$LOCAL_PATH/" "$RCLONE_REMOTE" \
     --resilient                   `# handle minor transient errors without aborting` \
     --resync                      `# rebuild bisync tracking state from current file listings`
 
+touch "$MARKER_FILE"
 echo "==> Resync complete"
