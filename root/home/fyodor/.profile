@@ -37,6 +37,7 @@ $HOME/.scripts:\
 /snap/bin:\
 $HOME/.local/bin:\
 /opt/apache-spark/bin:\
+$HOME/.npm-global/bin:$PATH\
 /opt/apache-spark/python"
 
 
