@@ -56,12 +56,6 @@ ensure_check_file() {
 
 ensure_check_file "$LOCAL_PATH/$CHECK_FILENAME"
 
-# Create check file on remote if missing
-if ! rclone lsf "$RCLONE_REMOTE" | grep -q "^${CHECK_FILENAME}$"; then
-    echo "==> Creating $CHECK_FILENAME on remote"
-    rclone touch "$RCLONE_REMOTE$CHECK_FILENAME"
-fi
-
 # --- Initial resync ---
 
 echo "==> Running initial resync"

@@ -35,8 +35,9 @@ borg create \
     "$BORG_REPO::sync-{now:%Y-%m-%dT%H:%M:%S}" \
     "$LOCAL_PATH"
 
-echo "==> Pruning old snapshots"
+echo "==> Pruning old sync snapshots"
 borg prune \
+    --glob-archives 'sync-*' \
     --keep-hourly 24 \
     --keep-daily 14 \
     --keep-weekly 8 \
