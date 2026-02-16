@@ -1,0 +1,56 @@
+_gwt_copy_symlinks() {
+    local source_dir="$1"
+    local target_dir="$2"
+    find "$source_dir" -maxdepth 1 -type l | while read -r link; do
+        cp -P "$link" "$target_dir"
+    done
+}
+
+gwt() {
+    local cmd="$1"
+    local branch="$2"
+
+    # Validate command
+    if [[ -z "$cmd" ]] || [[ "$cmd" != "create" && "$cmd" != "checkout" && "$cmd" != "remove" ]]; then
+        echo "Usage: gwt <create|checkout|remove> <branch>"
+        return 1
+    fi
+
+    # Validate branch name
+    if [[ -z "$branch" ]]; then
+        echo "Usage: gwt <create|checkout|remove> <branch>"
+        return 1
+    fi
+
+    # Must be inside a git repo
+    local repo_root
+    repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+        echo "gwt: not inside a git repository"
+        return 1
+    }
+
+    # Must be at repo top-level
+    if [[ "$PWD" != "$repo_root" ]]; then
+        echo "gwt: must be run from the repository root ($repo_root)"
+        return 1
+    fi
+
+    # Sanitize branch name for directory
+    local dir_name="${branch//\//-}"
+
+    case "$cmd" in
+        create)
+            git worktree add -b "$branch" "../$dir_name" || return 1
+            _gwt_copy_symlinks "$PWD" "../$dir_name"
+            cd "../$dir_name"
+            ;;
+        checkout)
+            git worktree add "../$dir_name" "$branch" || return 1
+            _gwt_copy_symlinks "$PWD" "../$dir_name"
+            cd "../$dir_name"
+            ;;
+        remove)
+            git worktree remove "../$dir_name" || return 1
+            ;;
+    esac
+}
