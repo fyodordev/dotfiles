@@ -66,6 +66,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+keymap("t", "<C-[>", [[<C-\><C-n>]], term_opts)
 
 -- OSC52 Clipboard --
 -- Copy to clipboard via OSC52 (works over SSH)
