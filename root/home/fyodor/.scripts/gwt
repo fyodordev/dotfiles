@@ -6,6 +6,13 @@ _gwt_copy_symlinks() {
     done
 }
 
+_gwt_run_setup() {
+    local worktree_dir="$1"
+    local setup="$worktree_dir/.gwt-setup"
+    [[ -x "$setup" ]] || return 0
+    ( cd "$worktree_dir" && "$setup" )
+}
+
 gwt() {
     local cmd="$1"
     local branch="$2"
@@ -42,11 +49,13 @@ gwt() {
         create)
             git worktree add -b "$branch" "../$dir_name" || return 1
             _gwt_copy_symlinks "$PWD" "../$dir_name"
+            _gwt_run_setup "$(cd "../$dir_name" && pwd)"
             cd "../$dir_name"
             ;;
         checkout)
             git worktree add "../$dir_name" "$branch" || return 1
             _gwt_copy_symlinks "$PWD" "../$dir_name"
+            _gwt_run_setup "$(cd "../$dir_name" && pwd)"
             cd "../$dir_name"
             ;;
         remove)
