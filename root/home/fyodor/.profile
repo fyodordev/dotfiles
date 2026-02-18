@@ -20,25 +20,15 @@ export __GLX_VENDOR_LIBRARY_NAME=nvidia
 
 export XDG_SCREENSHOTS_DIR=/home/fyodor/Screenshots
 
-#export PATH="\
-#$PATH:\
-#$HOME/.scripts:\
-#$(pyenv root):\
-#/var/lib/snapd/snap/bin:\
-#/snap/bin:\
-#$HOME/.local/bin:\
-#/opt/apache-spark/bin:\
-#/opt/apache-spark/python"
-
 export PATH="\
-$PATH:\
 $HOME/.scripts:\
 /var/lib/snapd/snap/bin:\
 /snap/bin:\
 $HOME/.local/bin:\
 /opt/apache-spark/bin:\
-$HOME/.npm-global/bin:$PATH\
-/opt/apache-spark/python"
+$HOME/.npm-global/bin:\
+/opt/apache-spark/python:\
+$PATH"
 
 
 # Application specific variables

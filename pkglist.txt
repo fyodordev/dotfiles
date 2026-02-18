@@ -37,7 +37,6 @@ fakeroot
 fd
 ffmpegthumbnailer
 firefox
-fish
 flatpak
 flex
 foot
@@ -46,6 +45,7 @@ fzf
 gammastep
 gcc
 gdm
+gdu
 gimp
 git
 gitleaks
@@ -127,6 +127,7 @@ pipewire-docs
 pipewire-pulse
 pkgconf
 plymouth
+pnpm
 poppler
 powertop
 procs
@@ -149,6 +150,7 @@ signal-desktop
 slack-electron
 sof-firmware
 sov
+starship
 stylua
 sudo
 sway
@@ -194,3 +196,8 @@ yt-dlp
 zathura
 zathura-pdf-mupdf
 zellij
+zsh
+zsh-autosuggestions
+zsh-completions
+zsh-history-substring-search
+zsh-syntax-highlighting
