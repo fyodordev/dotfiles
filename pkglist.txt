@@ -95,6 +95,7 @@ ncdu
 ncmpcpp
 neofetch
 neovim
+neovim-remote
 networkmanager
 nfs-utils
 nmap

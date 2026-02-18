@@ -38,6 +38,12 @@ gpgconf --launch gpg-agent
 export TERM='foot'
 export EDITOR='/usr/bin/nvim'
 
+# When inside a Neovim terminal, open files in the parent instance
+if [ -n "$NVIM" ]; then
+  export EDITOR='nvr --remote-tab-wait'
+  export VISUAL='nvr --remote-tab-wait'
+fi
+
 
 
 # Convenience aliases
