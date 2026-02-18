@@ -47,12 +47,22 @@ gwt() {
 
     case "$cmd" in
         create)
+            if [[ -d "../$dir_name" ]]; then
+                echo "gwt: worktree '../$dir_name' already exists, switching to it"
+                cd "../$dir_name"
+                return
+            fi
             git worktree add -b "$branch" "../$dir_name" || return 1
             _gwt_copy_symlinks "$PWD" "../$dir_name"
             _gwt_run_setup "$(cd "../$dir_name" && pwd)"
             cd "../$dir_name"
             ;;
         checkout)
+            if [[ -d "../$dir_name" ]]; then
+                echo "gwt: worktree '../$dir_name' already exists, switching to it"
+                cd "../$dir_name"
+                return
+            fi
             git worktree add "../$dir_name" "$branch" || return 1
             _gwt_copy_symlinks "$PWD" "../$dir_name"
             _gwt_run_setup "$(cd "../$dir_name" && pwd)"
