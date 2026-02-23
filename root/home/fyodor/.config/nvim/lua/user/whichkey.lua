@@ -110,7 +110,20 @@ which_key.add({
 	{ "<leader>go", "<cmd>Telescope git_status<cr>", desc = "Open changed file" },
 	{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Checkout branch" },
 	{ "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Checkout commit" },
-	{ "<leader>gd", "<cmd>Gitsigns diffthis HEAD<cr>", desc = "Diff" },
+	{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Working diff" },
+	{ "<leader>gD", function()
+		local remote_head = vim.fn.system("git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null")
+		local branch = "main"
+		if vim.v.shell_error == 0 and remote_head ~= "" then
+			branch = vim.trim(remote_head):match("([^/]+)$")
+		elseif os.execute("git show-ref --verify --quiet refs/heads/master 2>/dev/null") == 0 then
+			branch = "master"
+		end
+		vim.cmd("DiffviewOpen " .. branch .. "...HEAD")
+	end, desc = "Diff vs main/master" },
+	{ "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", desc = "File History (current)" },
+	{ "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "Branch History" },
+	{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
 
 	-- LSP group
 	{ "<leader>l", group = "LSP" },

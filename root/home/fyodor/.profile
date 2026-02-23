@@ -59,5 +59,7 @@ alias ls='ls --color=auto'
 alias cgit='/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
 alias sl='slack --enable-features=WebRTCPipeWireCapturer --enable-features=UseOzonePlatform --ozone-platform=wayland -s %U'
 alias cl='claude'
+alias wt='gwt checkout'
+
 
 source ~/.scripts/gwt

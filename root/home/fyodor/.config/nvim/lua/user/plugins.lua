@@ -282,6 +282,13 @@ return {
       require("user.neogit")
     end,
   },
+  {
+    "sindrets/diffview.nvim",
+    cmd = { "DiffviewOpen", "DiffviewFileHistory", "DiffviewClose" },
+    config = function()
+      require("user.diffview")
+    end,
+  },
 
   -- Todos
   {
